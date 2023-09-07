@@ -1,9 +1,10 @@
 import React from "react"
+import { DivCompTest } from "./styles";
 
 function App() {
 
   return (
-    <h2>Hello from React!</h2>
+    <DivCompTest>Hello QuixAlert!</DivCompTest>
   )
 }
 

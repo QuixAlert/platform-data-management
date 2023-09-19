@@ -1,0 +1,8 @@
+.component-wrapper {
+  height: 825px;
+  width: 77px;
+}
+
+.component-wrapper .component-1 {
+  width: unset !important;
+}

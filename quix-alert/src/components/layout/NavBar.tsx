@@ -35,8 +35,9 @@ function NavBar(){
           </SearchStyle>
         </LogoAndSearchBar>
 
-        {/*<UserDropDown/>*/}
+        <UserDropDown/>
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+          {/*<Menu.Item key="0"><UserDropDown/></Menu.Item>*/}
           <Menu.Item key="1" icon={<BellOutlined/>}/>
           <Menu.Item key="2" icon={<WechatOutlined />}/>
           <Menu.Item key="3" icon={<FieldTimeOutlined />}/>

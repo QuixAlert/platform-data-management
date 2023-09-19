@@ -1,11 +1,11 @@
 import React from "react"
 import { DivCompTest } from "./styles";
-import Navbar from "./components/navbar";
+import NavBar from "./components/layout/NavBar";
 
 function App() {
 
   return (
-    <Navbar/>
+    <NavBar/>
   )
 }
 

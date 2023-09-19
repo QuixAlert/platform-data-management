@@ -1,10 +1,13 @@
 import React from "react"
 
-import { Layout, Menu, Button, Input  } from "antd"
-import {BellOutlined, FieldTimeOutlined, WechatOutlined} from "@ant-design/icons";
+import {Layout, Menu, Button, Input, Dropdown} from "antd"
+import Icon, {BellOutlined, FieldTimeOutlined, WechatOutlined} from "@ant-design/icons";
 import styled from "styled-components";
+import UserDropDown from "./UserDropDown";
+// @ts-ignore
+//import { ReactComponent as NotificationIcon } from "@assets/icons/notification-icon.svg";
 
-function Navbar(){
+function NavBar(){
   const { Header } = Layout;
   const { Search } = Input
 
@@ -20,10 +23,10 @@ function Navbar(){
 
   return (
     <Layout className="layout">
-      <Header style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Header style={{ display: 'flex', justifyContent: 'space-between', color: "#25252D"}}>
         <LogoAndSearchBar>
           <div className="logo" style={{ color: 'white' }}>
-            <img src="../assets/images/QuixAlert-logo-white.png"/>
+            {/*<img src="../../assets/images/QuixAlert-logo-white.png"/>*/}
           </div>
 
           <SearchStyle>
@@ -32,8 +35,9 @@ function Navbar(){
           </SearchStyle>
         </LogoAndSearchBar>
 
+        {/*<UserDropDown/>*/}
         <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1" icon= {<BellOutlined/> }/>
+          <Menu.Item key="1" icon={<BellOutlined/>}/>
           <Menu.Item key="2" icon={<WechatOutlined />}/>
           <Menu.Item key="3" icon={<FieldTimeOutlined />}/>
         </Menu>
@@ -42,5 +46,5 @@ function Navbar(){
   )
 }
 
-export default Navbar
+export default NavBar
 

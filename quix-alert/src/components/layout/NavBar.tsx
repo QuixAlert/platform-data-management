@@ -3,7 +3,8 @@ import React from "react"
 import {Layout, Menu, Button, Input, Dropdown} from "antd"
 import Icon, {BellOutlined, FieldTimeOutlined, WechatOutlined} from "@ant-design/icons";
 import styled from "styled-components";
-import UserDropDown from "./UserDropDown";
+import DropDownItem from "./DropDownItem";
+import DropDown from "./DropDown";
 // @ts-ignore
 //import { ReactComponent as NotificationIcon } from "@assets/icons/notification-icon.svg";
 
@@ -35,13 +36,15 @@ function NavBar(){
           </SearchStyle>
         </LogoAndSearchBar>
 
-        <UserDropDown/>
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-          {/*<Menu.Item key="0"><UserDropDown/></Menu.Item>*/}
-          <Menu.Item key="1" icon={<BellOutlined/>}/>
-          <Menu.Item key="2" icon={<WechatOutlined />}/>
-          <Menu.Item key="3" icon={<FieldTimeOutlined />}/>
-        </Menu>
+        <div style={{display: "flex", justifyContent: "end", alignItems:"center"}}>
+          <DropDown/>
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+            {/*<Menu.Item key="0"><DropDownItemModel/></Menu.Item>*/}
+            <Menu.Item key="1" icon={<BellOutlined/>}/>
+            <Menu.Item key="2" icon={<WechatOutlined />}/>
+            <Menu.Item key="3" icon={<FieldTimeOutlined />}/>
+          </Menu>
+        </div>
       </Header>
     </Layout>
   )

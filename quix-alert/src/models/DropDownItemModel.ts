@@ -1,6 +1,8 @@
+import {ReactElement} from "react";
+
 class DropDownItemModel {
   text: string
-  img: string
+  icon: ReactElement
 }
 
 export default DropDownItemModel

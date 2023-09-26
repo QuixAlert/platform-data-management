@@ -11,23 +11,11 @@ export const DivCompTest = styled.div`
 export const DropDownMenuItems = styled.div`
     & {
       position: absolute;
-      top: 100px;
-      right: 20px;
+      margin-bottom: 0;
       background-color: aliceblue;
-      border-radius: var(--border-radius);
-      padding: 10px 20px;
-      width: 200px;
+      border-radius: 10%;
+      width: 150px;
     }
-  &:before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    right: 20px;
-    height: 20px;
-    width: 20px;
-    background: var(--secondary-bg);
-    transform: rotate(45deg);
-  }
   &.active {
     opacity: 1;
     visibility: visible;

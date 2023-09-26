@@ -5,9 +5,11 @@ import DropDownItemModel from '../../models/DropDownItemModel'
 
 function DropDownItem(props: DropDownItemModel){
   return (
-  <li className="dropDownItem">
-    <img src={props.img}/>
-    <a>{props.text}</a>
+  <li className="dropDownItem" style={{padding:'0px'}}>
+    <div style={{display:"flex", justifyContent:"start"}}>
+      {props.icon}
+      <a style={{marginLeft:10}}>{props.text}</a>
+    </div>
   </li>
   )
 }

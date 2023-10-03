@@ -1,10 +1,6 @@
 import React from "react"
-import { DivCompTest } from "./styles";
-import NavBar from "./components/layout/NavBar";
-import DropDownItem from "./components/layout/DropDownItem";
-import {Card} from "antd";
-import {ArrowDownOutlined} from "@ant-design/icons";
-import GlobalStyles from "./GlobalStyles";
+import NavBar from "./components/layout/NavBar/NavBar";
+import GlobalStyles from "./styles/GlobalStyles";
 
 function App() {
   return (

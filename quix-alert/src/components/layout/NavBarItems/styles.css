@@ -3,9 +3,10 @@
     height: 64px;
 }
 
-.navbar-item {
+.navbar-items-container a {
     font-size: 17px;
     color: white;
+    text-decoration: none;
 }
 
 .bell-item {

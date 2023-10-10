@@ -36,4 +36,12 @@ export const rules: Required<ModuleOptions>['rules'] = [
       },
     ],
   },
+  {
+    test: /\.svg$/,
+    use: [
+      {
+        loader: "svg-url-loader",
+      },
+    ],
+  },
 ];

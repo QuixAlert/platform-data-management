@@ -17,7 +17,7 @@ function NavBar() {
     <Layout className="navbar">
       <Header className="navbar-header">
         <div className="logo-search-bar">
-          <div className="navbar-container">
+          <div className="navbar-logo-container">
             <img className="navbar-logo" src={quixalertLogo} alt="QuixAlert Logo"/>
           </div>
 

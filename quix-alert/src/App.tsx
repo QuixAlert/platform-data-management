@@ -3,12 +3,15 @@ import React from "react"
 import NavBar from "./components/layout/NavBar/NavBar";
 import Sidebar from "./components/layout/Sidebar/Sidebar";
 
+import AdoptionPage from "./pages/AdoptionPage";
+
 function App() {
   return (
-   <div>
-    <NavBar/>
-    <Sidebar/>
-   </div>
+    <>
+      <NavBar/>
+      <Sidebar/>
+      <AdoptionPage/>
+    </>
   )
 }
 

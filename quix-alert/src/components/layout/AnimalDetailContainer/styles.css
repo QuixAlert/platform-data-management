@@ -17,14 +17,14 @@
 .animal-information-container {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    gap: 2rem;
+    justify-content: space-between;
     height: 100%;
 }
 
 .animal-images {
     border-radius: 12px;
     height: 48%;
+    object-fit: cover;
 }
 
 .animal-detail-container {

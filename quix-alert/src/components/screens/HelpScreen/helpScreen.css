@@ -1,0 +1,44 @@
+.conteiner-help {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #25252D;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* Estilos para o conteúdo dentro do retângulo */
+  .conteiner-help h1 {
+    font-size: 24px;
+    color: #fff;
+  }
+  .screen-title {
+    margin-bottom: 20px; /* Adiciona espaçamento entre o título e o menu */
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Outros estilos para o contêiner de cartões */
+  }
+  
+  .card {
+    width: 300px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px; /* Adicione um raio de 10px para cantos arredondados */
+
+    /* Outros estilos para cada cartão */
+  }
+  
+  .card img {
+    max-width: 100%;
+    /* Estilos para as miniaturas */
+  }

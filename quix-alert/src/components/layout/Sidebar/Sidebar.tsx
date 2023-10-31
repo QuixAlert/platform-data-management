@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useLocation  } from 'react-router-dom';
 
 import home from "../../../assets/icons/home.svg";
 import alert from "../../../assets/icons/alert.svg";
@@ -10,7 +11,17 @@ import person from "../../../assets/icons/person.svg";
 
 import "./styles.css"
 
+//Rotas
+
 function Sidebar () {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isConfigPage = location.pathname === '/config';
+  const isHelpPage = location.pathname === '/help';
+
+  
+  
   return (
     <>
       <div className="sidebar-container">
@@ -20,8 +31,8 @@ function Sidebar () {
           <img src={document} className="sidebar-icon"/>
           <img src={dog} className="sidebar-icon"/>
           <img src={alert} className="sidebar-icon"/>
-          <img src={gear} className="sidebar-icon"/>
-          <img src={question_mark} className="sidebar-icon"/>
+          <img src={gear} className={`sidebar-icon ${isConfigPage ? 'active' : ''}`}  onClick={ () => {navigate('/config')}} />
+          <img src={question_mark} className={`sidebar-icon ${isHelpPage ? 'active' : ''}`}  onClick={ () => {navigate('/help')}}/>
         </div>
       </div>
       <div className="sidebar-detail">

@@ -1,0 +1,102 @@
+.person-information-container {
+    flex-grow: 2.5;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.requester-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.requester-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.requester-role {
+    margin-bottom: 0.5rem;
+    color: #4e4b4b
+}
+.requester-name {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+
+.request-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.request-type {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.request-date-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.request-date-container p:first-child {
+    font-weight: bold;
+    font-size: 16px;
+}
+.request-date-container div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.request-icon {
+    height: 20px;
+    width: 20px;
+}
+.request-adress span {
+    font-weight: bold;
+    display: inline;
+}
+
+
+.request-body-container {
+    display: flex;
+    flex-direction: column;
+}
+.request-body-container div {
+    margin-bottom: 0.75rem;
+}
+.request-body-container h3{
+    font-size: 16px;
+    margin-bottom: 0.75rem;
+}
+.request-input-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+}
+
+
+.request-details {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+.personal-visit div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.visit-hour .visit-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}

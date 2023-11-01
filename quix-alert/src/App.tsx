@@ -7,6 +7,7 @@ import AdoptionPage from "./pages/AdoptionPage/AdoptionPage";
 import HomePage from "./pages/HomePage/HomePage";
 import ConfigScreen from "./components/screens/ConfingScreen/configScreen";
 import HelpScreen from "./components/screens/HelpScreen/helpScreen";
+import ReportPage from "./pages/ReportPage/ReportPage";
 
 import "./styles/GlobalStyles.css";
 
@@ -23,6 +24,7 @@ function App() {
       <Route path="/adoption" element={<AdoptionPage/>} />
       <Route path="/config" element={<ConfigScreen/>} />
       <Route path="/help" element={<HelpScreen/>} />
+      <Route path="/report" element={<ReportPage />}/>
 
     </Routes>
    </div>

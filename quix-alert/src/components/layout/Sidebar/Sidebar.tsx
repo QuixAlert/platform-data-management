@@ -1,4 +1,5 @@
 import React from "react";
+
 import { useNavigate, useLocation, Link  } from 'react-router-dom';
 
 import home from "../../../assets/icons/home.svg";
@@ -18,11 +19,14 @@ function Sidebar () {
   const isHomePage = location.pathname === "/home";
   const isAdoptionPage = location.pathname === "/adoption";
   const isUsersPage = location.pathname === "/user";
+  const isConfigPage = location.pathname === '/config';
+  const isHelpPage = location.pathname === '/help';
 
   return (
     <>
       <div className="sidebar-container">
         <div className="sidebar-content-container">
+
           <a onClick={() => {navigate("/home")}}>
             <img src={home} className={`sidebar-icon${isHomePage ? '-active' : ''}`}/>
           </a>
@@ -43,13 +47,14 @@ function Sidebar () {
             <img src={alert} className="sidebar-icon"/>
           </a>
 
-          <a onClick={() => {navigate("/home")}}>
+          <a onClick={() => {navigate("/config")}}>
             <img src={gear} className="sidebar-icon"/>
           </a>
 
-          <a onClick={() => {navigate("/home")}}>
+          <a onClick={() => {navigate("/help")}}>
             <img src={question_mark} className="sidebar-icon"/>
           </a>
+          
         </div>
       </div>
       <div className="sidebar-detail">

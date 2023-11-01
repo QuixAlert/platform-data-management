@@ -28,7 +28,7 @@ function Sidebar () {
         <div className="sidebar-content-container">
 
           <a onClick={() => {navigate("/home")}}>
-            <img src={home} className={`sidebar-icon${isHomePage ? '-active' : ''}`}/>
+            <img src={home} className={`sidebar-icon`}/>
           </a>
 
           <a onClick={() => {navigate("/home")}}>
@@ -40,10 +40,10 @@ function Sidebar () {
           </a>
 
           <a onClick={() => {navigate("/adoption")}}>
-            <img src={dog} className={`sidebar-icon${isAdoptionPage ? '-active' : ''}`}/>
+            <img src={dog} className={`sidebar-icon`}/>
           </a>
           
-          <a onClick={() => {navigate("/home")}}>
+          <a onClick={() => {navigate("/report")}}>
             <img src={alert} className="sidebar-icon"/>
           </a>
 

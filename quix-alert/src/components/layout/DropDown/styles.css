@@ -46,11 +46,10 @@
     width: 223.8px;
     border-top: 1px solid #1D1E23;
     border-radius: 0% 0% 5% 5%;
-    border: 1px solid #fff; /* Adicione uma borda de 1 pixel, com cor #1D1E23 */
     background-color: #25252D;
     list-style-type: none;
     z-index: 1;
-
+}
 
 .active {
     opacity: 1;

@@ -45,6 +45,7 @@
     border-radius: 0% 0% 5% 5%;
     background-color: #25252D;
     list-style-type: none;
+    z-index: 1;
 }
 
 .active {

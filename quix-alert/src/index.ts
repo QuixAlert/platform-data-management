@@ -17,6 +17,15 @@ const createWindow = (): void => {
     width: 800,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      webviewTag: true,
+      webSecurity: false, // Você pode tentar remover isso
+      nodeIntegration: false, // Mantenha desabilitado para segurança
+      contextIsolation: true,
+      sandbox: true,
+      allowRunningInsecureContent: false,
+      navigateOnDragDrop: false,
+      autoplayPolicy: 'user-gesture-required', // Adicione esta linha
+      
     },
   });
 

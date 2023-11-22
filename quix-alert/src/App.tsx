@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ConfigScreen from "./components/screens/ConfingScreen/configScreen";
 import HelpScreen from "./components/screens/HelpScreen/helpScreen";
 import ReportPage from "./pages/ReportPage/ReportPage";
+import AnimalRegistrationContainer from "./pages/AnimalRegistrationPage/AnimalRegistrationPage";
 
 import "./styles/GlobalStyles.css";
 
@@ -21,7 +22,7 @@ function App() {
 
     <Route path="/main_window" element={<HomePage/>} />
       <Route path="/home" element={<HomePage/>} />
-      <Route path="/adoption" element={<AdoptionPage/>} />
+      <Route path="/adoption" element={<AnimalRegistrationContainer/>} />
       <Route path="/config" element={<ConfigScreen/>} />
       <Route path="/help" element={<HelpScreen/>} />
       <Route path="/report" element={<ReportPage />}/>

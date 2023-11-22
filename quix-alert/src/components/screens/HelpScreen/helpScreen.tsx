@@ -1,39 +1,38 @@
 import React from "react";
-
+import YouTube from "react-youtube";
 import "./helpScreen.css";
 
-function helpScreen() {
-    return (
-        <div className="conteiner-help">
-            <h1 className="screen-title">Opções de Ajuda</h1>
-            <div className="card-container">
-                {/* Card 1 */}
-                {/* Card com vídeo do YouTube incorporado */}
-                <div className="card">
-                <iframe
-                    width="300"
-                    height="200"
-                    src="https://www.youtube.com/watch?v=JLHsM4bpfxY"
-                    title="Vídeo do YouTube"
-                    frameBorder="0"
-                    allowFullScreen
-                ></iframe>
-                <h2>Título do Vídeo 1</h2>
-                <p>Descrição do Vídeo 1.</p>
-                </div>
+function HelpScreen() {
+  const opts = {
+    height: "390",
+    width: "640",
+    playerVars: {
+      autoplay: 0,
+    },
+  };
 
-                {/* Card 2 */}
-                <div className="card">
-                <img src="url_do_video_2_thumbnail" alt="Miniatura do Vídeo 2" />
-                <h2>Título do Vídeo 2</h2>
-                <p>Descrição do Vídeo 2.</p>
-                </div>
-
-                {/* Adicione mais cards conforme necessário */}
-            </div>
-           
+  return (
+    <div className="conteiner-help">
+      <h1 className="screen-title">Opções de Ajuda</h1>
+      <div className="card-container">
+        {/* Card 1 */}
+        {/* Card com vídeo do YouTube incorporado diretamente */}
+        <div className="card">
+            <YouTube videoId="2g811Eo7K8U" opts={opts} />
+            <h2>Título do Vídeo 1</h2>
+            <p>Descrição do Vídeo 1.</p>        
         </div>
-    );
+
+        {/* Card 2 */}
+        <div className="card">
+          <h2 className="titulo-ajuda">Como Cadastrar Animais</h2>
+          <p className="texto-ajuda">Para cadastrar animais basta clicar no icone de animal na barra de navegação...</p>
+        </div>
+
+        {/* Adicione mais cards conforme necessário */}
+      </div>
+    </div>
+  );
 }
 
-export default helpScreen;
+export default HelpScreen;

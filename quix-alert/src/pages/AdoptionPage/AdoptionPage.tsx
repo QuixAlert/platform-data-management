@@ -11,6 +11,7 @@ function AdoptionPage() {
   return(
       <PagePanel>
         <div className="adoption-container">
+
           <PersonInformationContainer />
           <AnimalContainer />
           <ApprovalContainer />

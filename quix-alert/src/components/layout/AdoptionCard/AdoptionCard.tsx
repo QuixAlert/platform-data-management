@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useNavigate } from "react-router";
+
 import requester from "../../../assets/images/requester.jpeg";
 import responsible from "../../../assets/images/responsible.jpeg";
 import animal from "../../../assets/images/dog2.jpeg";
@@ -9,6 +11,8 @@ import male from "../../../assets/icons/male.svg"
 import "./style.css"
 
 function AdoptionCard() {
+  const navigate = useNavigate();
+
   return (
     <div className="adoption-card" title="">
       <div className="card-left">
@@ -63,15 +67,18 @@ function AdoptionCard() {
           </div>
           <div className="card-info-line">
             <h2>Status:</h2>
-            <p>Aguardando Assinatura</p>
+            <p>Esperando Assinatura</p>
           </div>
           <div className="card-info-line">
-            <h2>Previsão de Conclusão:</h2>
+            <h2>Conclusão Prevista:</h2>
             <p>05/09/2023</p>
           </div>
         </div>
         <div className="card-see-more">
-          <button className="card-see-more-btn">
+          <button
+            className="card-see-more-btn"
+            onClick={() => { navigate("/adoption/expandable") }}
+          >
             Ver mais
           </button>
         </div>

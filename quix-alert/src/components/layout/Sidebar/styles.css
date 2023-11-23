@@ -30,9 +30,7 @@ span {
 }
 
 .sidebar-icon.active {
-    fill: red; /* Substitua 'red' pela cor desejada */
-    border: 2px solid red; /* Exemplo de alteração na cor da borda */
-
+    fill: #269996;
   }
 
 .sidebar-detail {

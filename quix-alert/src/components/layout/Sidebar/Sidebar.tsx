@@ -1,14 +1,6 @@
 import React from "react";
 
-import { useNavigate, useLocation, Link  } from 'react-router-dom';
-
-import home from "../../../assets/icons/home.svg";
-import alert from "../../../assets/icons/alert.svg";
-import gear from "../../../assets/icons/gear.svg";
-import dog from "../../../assets/icons/dog.svg";
-import question_mark from "../../../assets/icons/question_mark.svg";
-import document from "../../../assets/icons/document.svg";
-import person from "../../../assets/icons/person.svg";
+import { useNavigate, useLocation  } from 'react-router-dom';
 
 import { IoHome, IoPersonSharp } from "react-icons/io5";
 import { MdOutlinePets } from "react-icons/md";

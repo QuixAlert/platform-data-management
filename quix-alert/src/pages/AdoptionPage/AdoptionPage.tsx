@@ -4,8 +4,32 @@ import AdoptionCard from "../../components/layout/AdoptionCard/AdoptionCard";
 
 import "./style.css"
 
+const cardTest:AdoptionCard = {
+  requesterName: "Thiago Maia",
+  requesterPicturePath: "../../../assets/images/requester.jpeg",
+  responsibleName: "Samuel Honorato",
+  responsiblePicturePath: "../../../assets/images/responsible.jpeg",    
+  solicitationType: "Adoção",
+  registerNumber: "3432121-78",
+  solicitationDate: "31/08/2023",
+  animalPicturePath: "../../../assets/images/dog2.jpeg",
+  animalName: "Sheldon",
+  animalGender: "MALE",
+  animalType: "DOG",
+  openDays: "20",
+  status: "Aguardando Assinatura",
+  expectedDate: "05/09/2023",
+}
+
 function AdoptionPage() {
   const [activateButton, setActivateButton] = useState('todos');
+
+  const htmlCards = [];
+  const adoptionCardsArray = [cardTest, cardTest, cardTest, cardTest, cardTest];
+  
+  for (let index = 0; index < adoptionCardsArray.length; index++) {
+    htmlCards.push(<AdoptionCard key={index} { ...adoptionCardsArray[index] } />)
+  }
 
   return(
       <div className="adoption-page-container">
@@ -42,16 +66,7 @@ function AdoptionPage() {
           </div>
         </div>
         <div className="adoption-page-cards-container">
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
-          <AdoptionCard />
+          { htmlCards }
         </div>
         <div className="adoption-page-plus-button-container">
           <button className="adoption-page-plus-button">

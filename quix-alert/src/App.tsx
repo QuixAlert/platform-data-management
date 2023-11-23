@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/layout/NavBar/NavBar";
 import Sidebar from "./components/layout/Sidebar/Sidebar";
 import AdoptionPage from "./pages/AdoptionPage/AdoptionPage";
+import AdoptionExpandablePage from "./pages/AdoptionExpandablePage/AdoptionExpandablePage";
 import HomePage from "./pages/HomePage/HomePage";
 import ConfigScreen from "./components/screens/ConfingScreen/configScreen";
 import HelpScreen from "./components/screens/HelpScreen/helpScreen";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/main_window" element={<HomePage/>} />
           <Route path="/home" element={<HomePage/>} />
           <Route path="/adoption" element={<AdoptionPage/>} />
+          <Route path="/adoption/expandable" element={<AdoptionExpandablePage/>} />
           <Route path="/config" element={<ConfigScreen/>} />
           <Route path="/help" element={<HelpScreen/>} />
           <Route path="/report" element={<ReportPage />}/>

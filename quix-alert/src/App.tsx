@@ -10,7 +10,8 @@ import ConfigScreen from './components/screens/ConfingScreen/configScreen';
 import HelpScreen from './components/screens/HelpScreen/helpScreen';
 import ReportPage from './pages/ReportPage/ReportPage';
 import './styles/GlobalStyles.css';
-import {AuthProvider, useAuth} from "./pages/LoginPage/AuthProvider";
+import { useAuth} from "./pages/LoginPage/AuthProvider";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function AuthenticatedApp() {
   return (

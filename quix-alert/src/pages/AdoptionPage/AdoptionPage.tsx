@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import AdoptionCard from "../../components/layout/AdoptionCard/AdoptionCard";
 
 import "./style.css"
+import {useMutation, useQuery} from "react-query";
+import {getTokens, signIn} from "../../api/user";
+import {useAuth} from "../LoginPage/AuthProvider";
+import {getAllAnimals} from "../../api/animals";
 
 const cardTest  = {
   requesterName: "Thiago Maia",
@@ -23,6 +27,22 @@ const cardTest  = {
 
 function AdoptionPage() {
   const [activateButton, setActivateButton] = useState('todos');
+
+  // ---------------- EXAMPLE START ----------------
+  // Getting tokens from login to use on the other requests
+  const { getTokens } = useAuth()
+
+  // Using the react-query to control the state of the request result
+  const { data: allAnimals, isLoading: isLoadingAllAnimals } = useQuery(
+    "animals",
+    () => getAllAnimals(getTokens()),
+  );
+
+  // Controlling the response
+  if(!isLoadingAllAnimals){
+    console.log(allAnimals)
+  }
+  // ---------------- EXAMPLE END ----------------
 
   const htmlCards = [];
   const adoptionCardsArray = [cardTest, cardTest, cardTest, cardTest, cardTest];

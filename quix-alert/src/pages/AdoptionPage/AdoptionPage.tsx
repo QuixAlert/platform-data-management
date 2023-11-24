@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AdoptionCard from "../../components/layout/AdoptionCard/AdoptionCard";
 
 import "./style.css"
+import {useAuth} from "../LoginPage/AuthProvider";
 
 const cardTest:AdoptionCard = {
   requesterName: "Thiago Maia",

@@ -1,8 +1,8 @@
 import axios from "axios";
-import {Login} from "./model/login";
-import {api} from "./baseConfig";
+import {Login} from "./model/Login";
+import {api} from "./config/axiosBaseConfig";
 import {AuthTokens} from "./model/AuthTokens";
-import {AUTH_PATH} from "./utils";
+import {AUTH_PATH} from "../consts";
 
 export async function signIn(login: Login): Promise<AuthTokens>{
     try {

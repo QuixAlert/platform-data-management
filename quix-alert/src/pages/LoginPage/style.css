@@ -1,0 +1,28 @@
+.card-login {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    margin: -25px 0 0 -25px
+}
+
+.login-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+/*#components-form-demo-normal-login .login-form {*/
+/*    max-width: 300px;*/
+/*}*/
+/*#components-form-demo-normal-login .login-form-forgot {*/
+/*    float: right;*/
+/*}*/
+/*#components-form-demo-normal-login .login-form-button {*/
+/*    width: 100%;*/
+/*}*/

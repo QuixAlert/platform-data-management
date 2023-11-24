@@ -65,7 +65,7 @@ function AdoptionCard(Props: AdoptionCard) {
         <div className="card-status-info">
         <div className="card-info-line">
             <h2>Dias em aberto:</h2>
-            <p>{ Props.openDays }</p>
+            <p>Está com { Props.openDays } dias</p>
           </div>
           <div className="card-info-line">
             <h2>Status:</h2>

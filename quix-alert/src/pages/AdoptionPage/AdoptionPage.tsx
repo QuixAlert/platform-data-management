@@ -34,7 +34,7 @@ function AdoptionPage() {
   return(
       <div className="adoption-page-container">
         <div className="adoption-page-header">
-          <h1>Solicitações de Documentos</h1>
+          <h1>Adoções</h1>
           <div className="adoption-page-filters-container">
             <h5>Tipos</h5>
             <div className="adoption-page-filters">

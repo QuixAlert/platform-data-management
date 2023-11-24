@@ -2,21 +2,19 @@ import React from "react";
 
 import { useNavigate } from "react-router";
 
-import AdoptionCard from "../../../interfaces/AdoptionCard";
+import ReportCard from "../../../interfaces/ReportCard";
 
-import requesterPicture from "../../../assets/images/requester.jpeg";
-import responsiblePicture from "../../../assets/images/responsible.jpeg";
-import animalPicture from "../../../assets/images/dog2.jpeg";
-import dog from "../../../assets/icons/dog.svg"
-import male from "../../../assets/icons/male.svg"
+import requesterPicture from "../../../assets/images/requester2.jpeg";
+import responsiblePicture from "../../../assets/images/responsible2.jpeg";
+import streetMap from "../../../assets/images/street_map.png"
 
 import "./style.css"
 
-function AdoptionCard(Props: AdoptionCard) {  
+function ReportCard(Props: ReportCard) {  
   const navigate = useNavigate();
 
   return (
-    <div className="adoption-card" title="">
+    <div className="report-card" title="">
       <div className="card-left">
         <div className="card-person-container">
           <img className="card-person-photo" src={ requesterPicture } alt="person-photo" />
@@ -25,33 +23,30 @@ function AdoptionCard(Props: AdoptionCard) {
             <p className="card-person-name">{ Props.requesterName }</p>
           </div>
         </div>
-        <div className="card-adoption-info-grid">
-          <div className="card-adoption-info-line">
-            <h3>Tipo de solicitação:</h3>
-            <span className="card-solicitation-type">{ Props.solicitationType }</span>
-          </div>
-          <div className="card-adoption-info-line">
-            <h3>Registro:</h3>            
+
+
+        <div className="card-report-container">
+          
+          <div className="card-report-content">
+            <h3>Registro:</h3>
             <p>{ Props.registerNumber }</p>
           </div>
-          <div className="card-adoption-info-line">
-            <h3>Data da solicitação:</h3>            
+
+          <div className="card-report-content">
+            <h3>Data da Solicitação:</h3>
             <p>{ Props.solicitationDate }</p>
           </div>
-        </div>
-        <div className="card-adoption-animal-info">
-          <div className="card-animal-photo-container">
-            <h3>Animal Solicitado:</h3>
-            <img className="card-animal-photo" src={ animalPicture } alt="animal image"/>
+
+
+          <div className="card-report-content">
+            <h3>Endereço da denúncia:</h3>
+            <h5>{ Props.reportAdress }</h5>
           </div>
-          <div className="card-animal-sub-info">
-            <h3>{ Props.animalName }</h3>
-            <div className="card-animal-icons">
-              <img src={dog} alt="dog icon"/>
-              <img src={male} alt="dog icon"/>
-            </div>
-          </div>
+
         </div>
+        
+        <img src={ streetMap } className="card-report-map" alt="street map" />
+
       </div>
 
       <div className="card-right">
@@ -79,7 +74,7 @@ function AdoptionCard(Props: AdoptionCard) {
         <div className="card-see-more">
           <button
             className="card-see-more-btn"
-            onClick={() => { navigate("/adoption/expandable") }}
+            onClick={() => { navigate("/report/expandable") }}
           >
             Ver mais
           </button>
@@ -89,4 +84,4 @@ function AdoptionCard(Props: AdoptionCard) {
   );
 }
 
-export default AdoptionCard;
+export default ReportCard;

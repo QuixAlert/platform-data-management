@@ -11,31 +11,30 @@ import ConfigScreen from './components/screens/ConfingScreen/configScreen';
 import HelpScreen from './components/screens/HelpScreen/helpScreen';
 import ReportPage from './pages/ReportPage/ReportPage';
 import ReportExpandablePage from "./pages/ReportExpandablePage/ReportExapandablePage";
-import './styles/GlobalStyles.css';
 import { useAuth} from "./pages/LoginPage/AuthProvider";
 import LoginPage from "./pages/LoginPage/LoginPage";
+
+import './styles/GlobalStyles.css';
 
 
 function AuthenticatedApp() {
   return (
+    <div>
+      <NavBar />
+      <Sidebar />
       <div>
-        <NavBar />
-          <Sidebar />
-            <div>
-              <Routes>
-                <Route path="/main_window" element={<HomePage/>} />
-                <Route path="/home" element={<HomePage/>} />
-                <Route path="/adoption" element={<AdoptionPage/>} />
-                <Route path="/adoption/expandable" element={<AdoptionExpandablePage/>} />
-                <Route path="/config" element={<ConfigScreen/>} />
-                <Route path="/help" element={<HelpScreen/>} />
-                <Route path="/report" element={<ReportPage />}/>
-                <Route path="/report/expandable" element={<ReportExpandablePage />}/>
-              </Routes>
-            </div>
-          <NavBar/>
-        <Sidebar/>
+        <Routes>
+          <Route path="/main_window" element={<HomePage/>} />
+          <Route path="/home" element={<HomePage/>} />
+          <Route path="/adoption" element={<AdoptionPage/>} />
+          <Route path="/adoption/expandable" element={<AdoptionExpandablePage/>} />
+          <Route path="/config" element={<ConfigScreen/>} />
+          <Route path="/help" element={<HelpScreen/>} />
+          <Route path="/report" element={<ReportPage />}/>
+          <Route path="/report/expandable" element={<ReportExpandablePage />}/>
+        </Routes>
       </div>
+    </div>
   );
 }
 

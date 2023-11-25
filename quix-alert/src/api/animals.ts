@@ -42,3 +42,17 @@ export async function getAnimalsByUserId(token: AuthTokens, userId: string): Pro
         throw new Error("Login error!")
     }
 }
+
+export async function createAnimal(token: AuthTokens, animal: Animal): Promise<boolean> {
+  try {
+    const { data, status } = await api.post(`${ANIMALS_PATH}/register`, {
+      data: animal,
+      headers: { Authorization: `Bearer ${token.token}` }
+  })
+    if(status == 201){
+        return true
+    }
+  } catch (error){
+      throw new Error("Error!")
+  }
+}

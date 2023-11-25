@@ -43,3 +43,11 @@ export async function getAnimalsByUserId(token: AuthTokens, userId: string): Pro
         throw new Error("Login error!")
     }
 }
+
+// devolutiva de denuncia
+
+// explicacao de feedback (justificativa)
+
+// status da devolucao
+
+// data feedback

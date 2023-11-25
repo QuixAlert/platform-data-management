@@ -42,3 +42,11 @@ export async function getDocumentsByUserId(token: AuthTokens, userId: string): P
         throw new Error("Login error!")
     }
 }
+
+// devolutiva de adocao
+
+// explicacao de feedback (justificativa)
+
+// status da devolucao
+
+// data feedback

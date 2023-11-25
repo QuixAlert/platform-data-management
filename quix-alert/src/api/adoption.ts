@@ -41,3 +41,11 @@ export async function getAdoptionByUserId(token: AuthTokens, userId: string): Pr
         throw new Error("Login error!")
     }
 }
+
+// devolutiva de adocao
+
+// explicacao de feedback (justificativa)
+
+// status da devolucao
+
+// data feedback

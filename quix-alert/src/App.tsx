@@ -11,9 +11,10 @@ import ConfigScreen from './components/screens/ConfingScreen/configScreen';
 import HelpScreen from './components/screens/HelpScreen/helpScreen';
 import ReportPage from './pages/ReportPage/ReportPage';
 import ReportExpandablePage from "./pages/ReportExpandablePage/ReportExapandablePage";
-import './styles/GlobalStyles.css';
 import { useAuth} from "./pages/LoginPage/AuthProvider";
 import LoginPage from "./pages/LoginPage/LoginPage";
+
+import './styles/GlobalStyles.css';
 
 
 function AuthenticatedApp() {

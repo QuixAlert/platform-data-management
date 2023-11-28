@@ -4,10 +4,12 @@ import requester from "../../../assets/images/requester.jpeg";
 
 import calendar from "../../../assets/icons/calendar.svg" 
 import clock from "../../../assets/icons/clock.svg" 
- 
+
 import { getFirebaseAppUserById } from "../../../api/firebaseUsers";
 
 import { useQuery } from "react-query";
+
+import RequesterContainer from "../RequesterContainer/RequesterContainer";
 
 import {useAuth} from "../../../pages/LoginPage/AuthProvider";
 
@@ -18,13 +20,18 @@ function PersonInformationContainer(Props: PersonalInformationContainer) {
 
   return(
     <div className="info person-information-container">
-      <div className="requester-container">
+      <RequesterContainer 
+        requesterName={Props.personResponsible}
+        requesterPicturePath=""
+        userId={Props.userId}
+      />
+      {/* <div className="requester-container">
         <img className="requester-photo" src={ requester } alt="requester-photo" />
         <div className="requester-role-and-name">
           <p className="requester-role">Solicitante:</p>
           <p className="requester-name">{Props.personResponsible}</p>
         </div>
-      </div>
+      </div> */}
 
       <div className="request-header-info">
         <h1 className="request-type">Solicitação de Adoção</h1>

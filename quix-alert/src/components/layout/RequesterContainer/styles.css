@@ -1,0 +1,19 @@
+.requester-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.requester-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.requester-role {
+  margin-bottom: 0.5rem;
+  color: #4e4b4b
+}
+.requester-name {
+  font-weight: bold;
+  font-size: 22px;
+}

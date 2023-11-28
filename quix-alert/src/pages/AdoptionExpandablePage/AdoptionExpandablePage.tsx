@@ -31,6 +31,7 @@ function AdoptionExpandablePage() {
         <div className="adoption-expandable-container">
           <PersonInformationContainer
             key={adoptionResponse.id}
+            userId={adoptionResponse.userId}
             addressResponsible={adoptionResponse.addressResponsible}
             documentResponsible=""
             houseDescription={adoptionResponse.houseDescription}

@@ -1,4 +1,5 @@
 interface PersonalInformationContainer {
+  userId: string,
   personResponsible: string,
   addressResponsible: string,
   documentResponsible: string,

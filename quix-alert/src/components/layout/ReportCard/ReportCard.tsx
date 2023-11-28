@@ -5,36 +5,46 @@ import { useNavigate } from "react-router";
 import ReportCard from "../../../interfaces/ReportCard";
 
 import requesterPicture from "../../../assets/images/requester2.jpeg";
-import responsiblePicture from "../../../assets/images/responsible2.jpeg";
+import responsiblePicture from "../../../assets/images/user.jpeg";
 import streetMap from "../../../assets/images/street_map.png"
 
 import "./style.css"
+import { useAuth } from "../../../pages/LoginPage/AuthProvider";
+import { useQuery } from "react-query";
+import { getFirebaseAppUserById } from "../../../api/firebaseUsers";
+import CardPersonContainer from "../CardPersonContainer/CardPersonContainer";
 
 function ReportCard(Props: ReportCard) {  
+  const { getTokens } = useAuth();
   const navigate = useNavigate();
+
+  const { data: userResponse, isLoading: isLoadingUser } = useQuery(
+    ["reports", Props.userId],
+    () => getFirebaseAppUserById(getTokens(), Props.userId),
+  );
+
+  if(isLoadingUser){
+    return <div>Carregando...</div>
+  }
+
+  const handleNavigate = (reportId: string) => {
+    navigate(`/report/expandable/${reportId}`);
+  };
 
   return (
     <div className="report-card" title="">
       <div className="card-left">
-        <div className="card-person-container">
-          <img className="card-person-photo" src={ requesterPicture } alt="person-photo" />
-          <div className="card-person-role-and-name">
-            <p className="card-person-role">Solicitante:</p>
-            <p className="card-person-name">{ Props.requesterName }</p>
-          </div>
-        </div>
-
+        <CardPersonContainer
+          requesterId={Props.userId}
+          requesterName={userResponse.name}
+          requesterPicture=""
+        />
 
         <div className="card-report-container">
-          
-          <div className="card-report-content">
-            <h3>Registro:</h3>
-            <p>{ Props.registerNumber }</p>
-          </div>
 
           <div className="card-report-content">
             <h3>Data da Solicitação:</h3>
-            <p>{ Props.solicitationDate }</p>
+            <p>{ Props.solicitationDate || "20/12/2023" }</p>
           </div>
 
 
@@ -54,27 +64,29 @@ function ReportCard(Props: ReportCard) {
           <img className="card-person-photo" src={ responsiblePicture } alt="person-photo" />
           <div className="card-person-role-and-name">
             <p className="card-person-role">Responsável:</p>
-            <p className="card-person-name">{ Props.responsibleName }</p>
+            <p className="card-person-name">{ Props.responsibleName || "Phablo Gabriel" }</p>
           </div>
         </div>
         <div className="card-status-info">
         <div className="card-info-line">
             <h2>Dias em aberto:</h2>
-            <p>Está com { Props.openDays } dias</p>
+            <p>Está com { Props.openDays || "20" } dias</p>
           </div>
           <div className="card-info-line">
             <h2>Status:</h2>
-            <p>{ Props.status }</p>
+            <p>{ Props.status || "Enviada" }</p>
           </div>
           <div className="card-info-line">
             <h2>Conclusão Prevista:</h2>
-            <p>{ Props.expectedDate }</p>
+            <p>{ Props.expectedDate || "25/12/2023"}</p>
           </div>
         </div>
         <div className="card-see-more">
           <button
             className="card-see-more-btn"
-            onClick={() => { navigate("/report/expandable") }}
+            onClick={() => { 
+              handleNavigate(Props.reportId);
+             }}
           >
             Ver mais
           </button>

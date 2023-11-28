@@ -1,4 +1,6 @@
 interface ReportCard {
+  userId: string,
+  reportId: string
   requesterName: string,
   requesterPicturePath: string,
   responsibleName: string,

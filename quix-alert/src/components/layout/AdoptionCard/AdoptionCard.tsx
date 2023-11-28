@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useNavigate } from "react-router";
 
@@ -10,11 +10,40 @@ import animalPicture from "../../../assets/images/dog2.jpeg";
 import dog from "../../../assets/icons/dog.svg"
 import male from "../../../assets/icons/male.svg"
 
+import { IoMaleSharp } from "react-icons/io5";
+import { IoFemaleSharp } from "react-icons/io5";
+
+import {useMutation, useQuery} from "react-query";
+import {getTokens, signIn} from "../../../api/user";
+import {useAuth} from "../../../pages/LoginPage/AuthProvider";
+import {getAllAnimals, getAnimalById} from "../../../api/animals";
+import { getAllAdoption } from "../../../api/adoption";
+
 import "./style.css"
 
 function AdoptionCard(Props: AdoptionCard) {  
+  const { getTokens } = useAuth();
   const navigate = useNavigate();
+  
 
+  const { data: animalResponse, isLoading: isLoadingAnimalResponse } = useQuery(
+    "animal",
+    () => {
+      console.log(Props.animalId);
+      getAnimalById(getTokens(), Props.animalId)
+    },
+  );
+
+  if (isLoadingAnimalResponse) {
+    return <div>Carregando...</div>
+  }
+
+  console.log("----------------------------");
+  
+  // console.log(Props.animalId);
+  // console.log(animalResponse);
+  
+  // console.log("----------------------------");
   return (
     <div className="adoption-card" title="">
       <div className="card-left">
@@ -28,7 +57,7 @@ function AdoptionCard(Props: AdoptionCard) {
         <div className="card-adoption-info-grid">
           <div className="card-adoption-info-line">
             <h3>Tipo de solicitação:</h3>
-            <span className="card-solicitation-type">{ Props.solicitationType }</span>
+            <span className="card-solicitation-type">Adoção</span>
           </div>
           <div className="card-adoption-info-line">
             <h3>Registro:</h3>            
@@ -39,19 +68,22 @@ function AdoptionCard(Props: AdoptionCard) {
             <p>{ Props.solicitationDate }</p>
           </div>
         </div>
-        <div className="card-adoption-animal-info">
+        {/* <div className="card-adoption-animal-info">
           <div className="card-animal-photo-container">
             <h3>Animal Solicitado:</h3>
-            <img className="card-animal-photo" src={ animalPicture } alt="animal image"/>
+            <img className="card-animal-photo" src={ animalResponse.picturePath } alt="animal image"/>
           </div>
           <div className="card-animal-sub-info">
-            <h3>{ Props.animalName }</h3>
+            <h3>{ animalResponse.name }</h3>
             <div className="card-animal-icons">
-              <img src={dog} alt="dog icon"/>
-              <img src={male} alt="dog icon"/>
+              {
+                animalResponse.gender === "Macho" 
+                  ? (<IoMaleSharp className="card-animal-icon"/>)
+                  : (<IoFemaleSharp className="card-animal-icon"/>)
+              }
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="card-right">

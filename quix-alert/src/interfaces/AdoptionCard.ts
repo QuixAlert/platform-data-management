@@ -6,6 +6,7 @@ interface AdoptionCard {
   solicitationType: string,
   registerNumber: string,
   solicitationDate: string,
+  animalId: string,
   animalPicturePath: string,
   animalName: string,
   animalGender: string,

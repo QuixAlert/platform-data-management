@@ -16,13 +16,13 @@ export async function getAllAdoption(token: AuthTokens): Promise<Adoption[]>{
     }
 }
 
-export async function getAdoptionById(token: AuthTokens, adoptionId: string): Promise<Adoption[]>{
+export async function getAdoptionById(token: AuthTokens, adoptionId: string): Promise<Adoption>{
     try {
         const { data, status } = await api.get(`${ADOPTIONS_PATH}/${adoptionId}`, {
             headers: { Authorization: `Bearer ${token.token}` }
         })
-        if(status == 201){
-            return data as Adoption[]
+        if(status == 200){
+            return data as Adoption
         }
     } catch (error){
         throw new Error("Login error!")

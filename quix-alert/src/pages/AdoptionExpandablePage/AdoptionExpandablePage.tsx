@@ -44,7 +44,18 @@ function AdoptionExpandablePage() {
             visitDate=""
             visitHour=""
           />
-          <AnimalContainer />
+          <AnimalContainer
+            key={adoptionResponse.animalId}
+            id={adoptionResponse.animalId}
+            description={adoptionResponse.animalDescription}
+            gender=""
+            name=""
+            picturePath=""
+            race=""
+            size=""
+            type=""
+            userId=""
+          />
           <ApprovalContainer />
         </div>
       </PagePanel>

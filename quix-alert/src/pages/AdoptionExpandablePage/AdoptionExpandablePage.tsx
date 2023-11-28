@@ -56,7 +56,11 @@ function AdoptionExpandablePage() {
             type=""
             userId=""
           />
-          <ApprovalContainer />
+          <ApprovalContainer
+            key={adoptionResponse.personResponsible}
+            solicitationDate=""
+            solicitationHour=""
+          />
         </div>
       </PagePanel>
   );

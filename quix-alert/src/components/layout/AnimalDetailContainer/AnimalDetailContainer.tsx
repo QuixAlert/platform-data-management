@@ -3,6 +3,8 @@ import React from "react";
 
 import animal from "../../../assets/images/dog.jpeg";
 import dog from "../../../assets/icons/dog-black.svg";
+import { FaCat, FaDog } from "react-icons/fa";
+import { PiBirdFill } from "react-icons/pi";
 
 import { Animal } from "../../../api/model/Animal";
 import { getTokens } from "../../../api/user";
@@ -33,7 +35,23 @@ function AnimalContainer(Props: AnimalDetailContainer) {
 
         <div className="animal-detail-container">
           <div className="animal-title">
-            <img src={ dog } alt="animal icon" />
+            {  
+              (() => {
+                if (animalResponse.type == "Cachorro") {
+                  return (
+                    <FaDog className="animal icon"/>
+                  )
+                } else if (animalResponse.type == "Gato") {
+                  return (
+                    <FaCat className="animal icon"/>
+                  )
+                } else if (animalResponse.type == "Pássaro") {
+                  return (
+                    <PiBirdFill className="animal icon"/>
+                  )
+                  }
+              })()
+            }
             <h2>{animalResponse.name}</h2>
           </div>
 

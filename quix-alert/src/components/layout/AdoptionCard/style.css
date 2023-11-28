@@ -129,7 +129,6 @@ img.card-animal-photo {
 .card-animal-icon {
   height: 25px;
   width: 25px;
-  filter: invert(100%);
   color: black;
 }
 

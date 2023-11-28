@@ -29,26 +29,6 @@ const cardTest  = {
 function AdoptionPage() {
   const { getTokens } = useAuth();
   const [activateButton, setActivateButton] = useState('todos');
-
-  //const adoptionCardsArray: Adoption = [];
-  const htmlCards = []; 
-
-  // ---------------- EXAMPLE START ----------------
-  // Getting tokens from login to use on the other requests
-  // const { getTokens } = useAuth()
-
-  // // Using the react-query to control the state of the request result
-  // const { data: allAnimals, isLoading: isLoadingAllAnimals } = useQuery(
-  //   "animals",
-  //   () => getAllAnimals(getTokens()),
-  // );
-
-  // // Controlling the response
-  // if(!isLoadingAllAnimals){
-  //   console.log(allAnimals)
-  // }
-  // ---------------- EXAMPLE END ----------------
-
   
   const { data: allAdoptionsResponse, isLoading: isLoadingAllAdoptions } = useQuery(
     "adoptions",
@@ -57,34 +37,7 @@ function AdoptionPage() {
 
   if (isLoadingAllAdoptions) {
     return <div>Carregando...</div>
-    //adoptionCardsArray.push(...allAdoptionsResponse);
   }
-
-  
-
-
-  // for (let adoption of allAdoptionsResponse) {
-  //   htmlCards.push(
-  //     <AdoptionCard
-  //       key={adoption.id}
-  //       animalId={adoption.animalId}
-  //       requesterName=""
-  //       requesterPicturePath=""
-  //       responsibleName={adoption.personResponsible}
-  //       responsiblePicturePath=""
-  //       solicitationType=""
-  //       registerNumber=""
-  //       solicitationDate=""
-  //       animalPicturePath=""
-  //       animalName=""
-  //       animalType={adoption.animalType}
-  //       animalGender=""
-  //       openDays=""
-  //       status=""
-  //       expectedDate=""
-  //     />
-  //   )
-  // }
 
   return(
       <div className="adoption-page-container">
@@ -124,11 +77,12 @@ function AdoptionPage() {
           {
             allAdoptionsResponse.map((adoption: Adoption) => (
               <AdoptionCard
-                
+                key={adoption.id}
+                adoptionId={adoption.id}
                 animalId={adoption.animalId}
-                requesterName=""
+                requesterName={adoption.personResponsible}
                 requesterPicturePath=""
-                responsibleName={adoption.personResponsible}
+                responsibleName=""
                 responsiblePicturePath=""
                 solicitationType=""
                 registerNumber=""

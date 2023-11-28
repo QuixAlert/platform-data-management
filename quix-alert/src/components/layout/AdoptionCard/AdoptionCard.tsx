@@ -12,6 +12,9 @@ import male from "../../../assets/icons/male.svg"
 
 import { IoMaleSharp } from "react-icons/io5";
 import { IoFemaleSharp } from "react-icons/io5";
+import { FaDog } from "react-icons/fa";
+import { FaCat } from "react-icons/fa";
+import { PiBirdFill } from "react-icons/pi";
 
 import {useMutation, useQuery} from "react-query";
 import {getTokens, signIn} from "../../../api/user";
@@ -27,23 +30,18 @@ function AdoptionCard(Props: AdoptionCard) {
   
 
   const { data: animalResponse, isLoading: isLoadingAnimalResponse } = useQuery(
-    "animal",
-    () => {
-      console.log(Props.animalId);
-      getAnimalById(getTokens(), Props.animalId)
-    },
+    ["animal", Props.animalId],
+    () => getAnimalById(getTokens(), Props.animalId),
   );
 
   if (isLoadingAnimalResponse) {
     return <div>Carregando...</div>
   }
 
-  console.log("----------------------------");
-  
-  // console.log(Props.animalId);
-  // console.log(animalResponse);
-  
-  // console.log("----------------------------");
+  const handleNavigate = (adoptionId: string) => {
+    navigate(`/adoption/expandable/${adoptionId}`);
+  };
+
   return (
     <div className="adoption-card" title="">
       <div className="card-left">
@@ -60,15 +58,11 @@ function AdoptionCard(Props: AdoptionCard) {
             <span className="card-solicitation-type">Adoção</span>
           </div>
           <div className="card-adoption-info-line">
-            <h3>Registro:</h3>            
-            <p>{ Props.registerNumber }</p>
-          </div>
-          <div className="card-adoption-info-line">
             <h3>Data da solicitação:</h3>            
             <p>{ Props.solicitationDate }</p>
           </div>
         </div>
-        {/* <div className="card-adoption-animal-info">
+        <div className="card-adoption-animal-info">
           <div className="card-animal-photo-container">
             <h3>Animal Solicitado:</h3>
             <img className="card-animal-photo" src={ animalResponse.picturePath } alt="animal image"/>
@@ -77,13 +71,32 @@ function AdoptionCard(Props: AdoptionCard) {
             <h3>{ animalResponse.name }</h3>
             <div className="card-animal-icons">
               {
+                
+                
+                (() => {
+                  if (animalResponse.type == "Cachorro") {
+                    return (
+                      <FaDog className="card-animal-icon"/>
+                    )
+                  } else if (animalResponse.type == "Gato") {
+                    return (
+                      <FaCat className="card-animal-icon"/>
+                    )
+                  } else if (animalResponse.type == "Pássaro") {
+                    return (
+                      <PiBirdFill className="card-animal-icon"/>
+                    )
+                   }
+                })()
+              }
+              {
                 animalResponse.gender === "Macho" 
                   ? (<IoMaleSharp className="card-animal-icon"/>)
                   : (<IoFemaleSharp className="card-animal-icon"/>)
               }
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="card-right">
@@ -91,7 +104,7 @@ function AdoptionCard(Props: AdoptionCard) {
           <img className="card-person-photo" src={ responsiblePicture } alt="person-photo" />
           <div className="card-person-role-and-name">
             <p className="card-person-role">Responsável:</p>
-            <p className="card-person-name">{ Props.responsibleName }</p>
+            <p className="card-person-name">Phablo Gabriel</p>
           </div>
         </div>
         <div className="card-status-info">
@@ -111,7 +124,9 @@ function AdoptionCard(Props: AdoptionCard) {
         <div className="card-see-more">
           <button
             className="card-see-more-btn"
-            onClick={() => { navigate("/adoption/expandable") }}
+            onClick={() => { 
+              handleNavigate(Props.adoptionId);
+             }}
           >
             Ver mais
           </button>

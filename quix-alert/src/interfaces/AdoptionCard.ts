@@ -1,4 +1,5 @@
 interface AdoptionCard {
+  adoptionId: string,
   requesterName: string,
   requesterPicturePath: string,
   responsibleName: string,

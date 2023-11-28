@@ -6,8 +6,12 @@ import PersonInformationContainer from "../../components/layout/PersonInformatio
 import ApprovalContainer from "../../components/layout/ApprovalContainer/ApprovalContainer";
 
 import "./styles.css"
+import { useParams } from "react-router-dom";
 
 function AdoptionExpandablePage() {
+  const { adoptionId } = useParams();
+  console.log(adoptionId);
+  
   return(
       <PagePanel>
         <div className="adoption-expandable-container">

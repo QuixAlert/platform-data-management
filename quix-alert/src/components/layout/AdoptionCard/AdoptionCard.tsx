@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import AdoptionCard from "../../../interfaces/AdoptionCard";
 
 import requesterPicture from "../../../assets/images/requester.jpeg";
-import responsiblePicture from "../../../assets/images/responsible.jpeg";
+import responsiblePicture from "../../../assets/images/user.jpeg";
 import animalPicture from "../../../assets/images/dog2.jpeg";
 import dog from "../../../assets/icons/dog.svg"
 import male from "../../../assets/icons/male.svg"
@@ -23,6 +23,7 @@ import {getAllAnimals, getAnimalById} from "../../../api/animals";
 import { getAllAdoption } from "../../../api/adoption";
 
 import "./style.css"
+import CardPersonContainer from "../CardPersonContainer/CardPersonContainer";
 
 function AdoptionCard(Props: AdoptionCard) {  
   const { getTokens } = useAuth();
@@ -45,13 +46,11 @@ function AdoptionCard(Props: AdoptionCard) {
   return (
     <div className="adoption-card" title="">
       <div className="card-left">
-        <div className="card-person-container">
-          <img className="card-person-photo" src={ requesterPicture } alt="person-photo" />
-          <div className="card-person-role-and-name">
-            <p className="card-person-role">Solicitante:</p>
-            <p className="card-person-name">{ Props.requesterName }</p>
-          </div>
-        </div>
+        <CardPersonContainer
+          requesterId={Props.requesterId}
+          requesterName={Props.requesterName}
+          requesterPicture=""
+        />
         <div className="card-adoption-info-grid">
           <div className="card-adoption-info-line">
             <h3>Tipo de solicitação:</h3>
@@ -59,7 +58,7 @@ function AdoptionCard(Props: AdoptionCard) {
           </div>
           <div className="card-adoption-info-line">
             <h3>Data da solicitação:</h3>            
-            <p>{ Props.solicitationDate }</p>
+            <p>{ Props.solicitationDate || "20/12/2023"}</p>
           </div>
         </div>
         <div className="card-adoption-animal-info">
@@ -110,15 +109,15 @@ function AdoptionCard(Props: AdoptionCard) {
         <div className="card-status-info">
         <div className="card-info-line">
             <h2>Dias em aberto:</h2>
-            <p>Está com { Props.openDays } dias</p>
+            <p>Está com { Props.openDays || "20" } dias</p>
           </div>
           <div className="card-info-line">
             <h2>Status:</h2>
-            <p>{ Props.status }</p>
+            <p>{ Props.status || "Aguardando" }</p>
           </div>
           <div className="card-info-line">
             <h2>Conclusão Prevista:</h2>
-            <p>{ Props.expectedDate }</p>
+            <p>{ Props.expectedDate || "25/12/2023" }</p>
           </div>
         </div>
         <div className="card-see-more">

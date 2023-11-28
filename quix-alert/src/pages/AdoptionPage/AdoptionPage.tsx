@@ -80,6 +80,7 @@ function AdoptionPage() {
                 key={adoption.id}
                 adoptionId={adoption.id}
                 animalId={adoption.animalId}
+                requesterId={adoption.userId}
                 requesterName={adoption.personResponsible}
                 requesterPicturePath=""
                 responsibleName=""

@@ -22,7 +22,7 @@ export async function getFirebaseAppUserById(token: AuthTokens, userId: string):
         const { data, status } = await api.get(`${FIREBASE_USERS_PATH}/${userId}`, {
             headers: { Authorization: `Bearer ${token.token}` }
         })
-        if(status == 201){
+        if(status == 200){
             return data as FirebaseUser
         }
     } catch (error){

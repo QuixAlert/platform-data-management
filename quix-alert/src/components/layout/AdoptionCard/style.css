@@ -73,19 +73,16 @@
 
 
 .card-adoption-info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0.125rem;
-  grid-row-gap: 2rem;
-  margin-bottom: 1.5rem;
-  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 1.5rem; 
 }
 .card-adoption-info-line h3 {
   font-weight: bold;
   margin-bottom: 5px;
 }
-.card-adoption-info-line:nth-child(1) {
+/* .card-adoption-info-line:nth-child(1) {
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   flex-direction: column;
@@ -100,7 +97,7 @@
 }
 .card-adoption-info-line:nth-child(4) {
   grid-area: 2 / 2 / 3 / 3; 
-}
+} */
 
 .card-adoption-animal-info {
   display: flex;

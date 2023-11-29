@@ -5,10 +5,15 @@ import { Feedback } from "./model/Feedback";
 
 export async function registerReportFeedback(token: AuthTokens, feedback: Feedback): Promise<boolean> {
   try {
-    const { data, status } = await api.post(`${REPORT_FEEDBACK_PATH}/register`, {
-      data: feedback,
-      headers: { Authorization: `Bearer ${token.token}` }
+    let feedbackT = token['feedback']
+    let tokenT = token['token']
+
+    console.log("data before sending", feedbackT)
+
+    const { data, status } = await api.post(`${REPORT_FEEDBACK_PATH}/register`, feedbackT, {
+      headers: { Authorization: `Bearer ${tokenT.token}` }
   })
+
     if(status == 201){
         return true
     }

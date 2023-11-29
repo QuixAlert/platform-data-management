@@ -1,30 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import AdoptionCard from "../../components/layout/AdoptionCard/AdoptionCard";
 
 import "./style.css"
-import {useMutation, useQuery} from "react-query";
-import {getTokens, signIn} from "../../api/user";
+import {useQuery} from "react-query";
 import {useAuth} from "../LoginPage/AuthProvider";
-import {getAllAnimals} from "../../api/animals";
 import { getAllAdoption } from "../../api/adoption";
-
-const cardTest  = {
-  requesterName: "Thiago Maia",
-  requesterPicturePath: "../../../assets/images/requester.jpeg",
-  responsibleName: "Samuel Honorato",
-  responsiblePicturePath: "../../../assets/images/responsible.jpeg",    
-  solicitationType: "Adoção",
-  registerNumber: "3432121-78",
-  solicitationDate: "31/08/2023",
-  animalPicturePath: "../../../assets/images/dog2.jpeg",
-  animalName: "Sheldon",
-  animalGender: "MALE",
-  animalType: "DOG",
-  openDays: "20",
-  status: "Aguardando Assinatura",
-  expectedDate: "05/09/2023",
-}
 
 function AdoptionPage() {
   const { getTokens } = useAuth();
@@ -77,7 +58,7 @@ function AdoptionPage() {
         <div className="adoption-page-cards-container">
           {
             allAdoptionsResponse.map((adoption: Adoption) => (
-              Object.keys(adoption).length > 0 && (
+              Object.keys(adoption).length > 0 &&  (
                 <AdoptionCard
                   key={adoption.id}
                   adoptionId={adoption.id}

@@ -3,7 +3,7 @@ import React from "react";
 import PagePanel from "../../components/layout/PagePanel/PagePanel"
 import AnimalContainer from "../../components/layout/AnimalDetailContainer/AnimalDetailContainer";
 import PersonInformationContainer from "../../components/layout/PersonInformationContainer/PersonInformationContainer";
-import ApprovalContainer from "../../components/layout/ApprovalContainer/ApprovalContainer";
+import ApprovalAdoptionContainer from "../../components/layout/ApprovalAdoptionContainer/ApprovalAdoptionContainer";
 
 import "./styles.css"
 import { useParams } from "react-router-dom";
@@ -24,7 +24,7 @@ function AdoptionExpandablePage() {
   if (isLoadingAdoption) {
     return <div>Carregando...</div>
   }
-
+  
 
   return(
       <PagePanel>
@@ -56,8 +56,9 @@ function AdoptionExpandablePage() {
             type=""
             userId=""
           />
-          <ApprovalContainer
+          <ApprovalAdoptionContainer
             key={adoptionResponse.personResponsible}
+            id={adoptionId}
             solicitationDate=""
             solicitationHour=""
           />

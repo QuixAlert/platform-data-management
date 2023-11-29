@@ -21,10 +21,7 @@ function ReportPage() {
 
   if(isLoadingAllReports){
     return <div>Carregando...</div>
-  }
-
-  console.log(getTokens().token);
-  
+  }  
 
   return(
     <div className="report-page-container">
@@ -63,7 +60,7 @@ function ReportPage() {
       <div className="report-page-cards-container">
         {
           allReportsResponse.map((report: ReportF) => (
-            Object.keys(report).length > 0 && (
+            Object.keys(report).length > 0 && report.attended == false && (
               <ReportCard
                 key={report.id}
                 reportId={report.id}
@@ -84,11 +81,6 @@ function ReportPage() {
             ))
           )
         }
-      </div>
-      <div className="report-page-plus-button-container">
-        <button className="report-page-plus-button">
-          +
-        </button>
       </div>
     </div>
   );

@@ -4,6 +4,29 @@ import {ADOPTIONS_PATH, ANIMALS_PATH, REPORT_PATH} from "../consts";
 import {Animal} from "./model/Animal";
 import {ReportF} from "./model/ReportF";
 
+export async function changeStatusReport(token: AuthTokens, reportId: string): Promise<boolean> {
+    try {
+        const tokenT = token['token']
+        const reportIdT = token['reportId']
+        console.log(tokenT);
+        console.log(tokenT.token);
+        const { data, status } = await api.put(
+          `${REPORT_PATH}/change-status/${reportIdT}`,
+          {},
+          {
+              headers: { Authorization: `Bearer ${tokenT.token}` }
+          }
+        );
+
+        if(status == 200){
+            return true
+        }
+        return false
+    } catch(error){
+        return false
+    }
+}
+
 export async function getAllReport(token: AuthTokens): Promise<ReportF[]>{
     try {
         const { data, status } = await api.get(`${REPORT_PATH}`, {

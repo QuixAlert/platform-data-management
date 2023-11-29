@@ -7,5 +7,6 @@ export interface ReportF {
     picturePath: string,
     incidentTime: string,
     incidentData: string,
-    incidentLocation:string
+    incidentLocation:string,
+    attended: Boolean,
 }

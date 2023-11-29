@@ -3,7 +3,7 @@ import React from "react";
 import PagePanel from "../../components/layout/PagePanel/PagePanel"
 import ReportContainer from "../../components/layout/ReportContainer/ReportContainer";
 import ReportInformationContainer from "../../components/layout/ReportInformationContainer/ReportInformationContainer";
-import ApprovalContainer from "../../components/layout/ApprovalContainer/ApprovalContainer";
+import ApprovalReportContainer from "../../components/layout/ApprovalReportContainer/ApprovalReportContainer";
 
 import { useParams } from "react-router";
 import { useAuth } from "../LoginPage/AuthProvider";
@@ -42,7 +42,8 @@ function ReportExpandablePage() {
           <ReportContainer
             reportPicturePath={reportResponse.picturePath}
           />
-          <ApprovalContainer
+          <ApprovalReportContainer
+            id={reportId}
             solicitationDate={reportResponse.incidentData}
             solicitationHour={reportResponse.incidentTime}
           />

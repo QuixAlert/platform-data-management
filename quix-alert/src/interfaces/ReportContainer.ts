@@ -1,0 +1,3 @@
+interface ReportContainer {
+  reportPicturePath: string,
+}

@@ -1,0 +1,45 @@
+/* configScreen.css */
+.conteiner-config {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 80%;
+    height: 80vh;
+    background-color: #25252D;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* Estilos para o conteúdo dentro do retângulo */
+  .conteiner-config h1 {
+    font-size: 24px;
+    color: #fff;
+  }
+  .screen-title {
+    margin-bottom: 20px; /* Adiciona espaçamento entre o título e o menu */
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha o texto à esquerda */
+    gap: 10px;
+  }
+  
+  .menu-item {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s; /* Adiciona transição para a mudança de cor */
+    border-bottom: 1px solid #ccc; /* Linha separadora */
+  }
+
+  .menu-item:last-child {
+    border-bottom: none; /* Remove a linha separadora do último item */
+  }
+  
+  .menu-item:hover {
+    color: #269996; /* Cor do texto quando o mouse está sobre o item */
+  }

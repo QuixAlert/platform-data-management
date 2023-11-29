@@ -1,0 +1,75 @@
+.adoption-page-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 6.5rem 0 6rem 7rem;
+  width: 90vw;
+  min-height: 85vh;
+  height: fit-content;
+  background-color: #25252D;
+  border-radius: 10px;
+  padding: 20px;
+}
+.adoption-page-cards-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  justify-items: center;
+}
+
+
+
+.adoption-page-header h1 {
+  font-size: 26px;
+  color: white;
+}
+.adoption-page-filters-container {
+  margin-bottom: 3rem;
+}
+.adoption-page-filters-container h5 {
+  margin: 1rem 0 0.5rem;
+  color: #838181;
+}
+.adoption-page-filters-button {
+  margin-right: 0.5rem;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 15px;
+}
+.adoption-page-filters-button:hover {
+  cursor: pointer;
+}
+.button-filter-selected {
+  background-color: #269996;
+  color: white;
+}
+
+
+.adoption-page-plus-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.adoption-page-plus-button {
+  margin: 1rem auto;
+  padding: 5px 38px;
+  bottom: 0;
+  left: calc(50% - 45px);
+  border-radius: 25px;
+  background-color: #269996;
+  color: white;
+  font-size: 30px;
+}
+
+
+@media (min-width: 1650px) {
+  .adoption-page-cards-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 1rem;
+    justify-items: center;
+  }
+}

@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5rem;
+}
+
+.painel {
+    width: 90%;
+    height: 85vh;
+    background-color: #c4c4c4;
+    margin-top: 6.5rem;
+    border-radius: 25px;
+}

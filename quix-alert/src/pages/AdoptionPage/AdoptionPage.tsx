@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation  } from 'react-router-dom';
+
 
 import AdoptionCard from "../../components/layout/AdoptionCard/AdoptionCard";
 
@@ -27,6 +29,11 @@ const cardTest  = {
 }
 
 function AdoptionPage() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const isCadastrionPage = location.pathname === "/animal_registration";
+  
   const { getTokens } = useAuth();
   const [activateButton, setActivateButton] = useState('todos');
   
@@ -103,8 +110,8 @@ function AdoptionPage() {
           }
         </div>
         <div className="adoption-page-plus-button-container">
-          <button className="adoption-page-plus-button">
-            +
+          <button className="adoption-page-plus-button" onClick={() => {navigate("/animal_registration")}}>
+            Adicionar Animal
           </button>
         </div>
       </div>

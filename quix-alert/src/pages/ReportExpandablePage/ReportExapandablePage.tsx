@@ -41,6 +41,7 @@ function ReportExpandablePage() {
           />
           <ReportContainer
             reportPicturePath={reportResponse.picturePath}
+            reportLocation={reportResponse.incidentLocation}
           />
           <ApprovalReportContainer
             id={reportId}

@@ -64,7 +64,7 @@ function ApprovalAdoptionContainer(Props: ApprovalContainer) {
         </div>
         <div className="request-infos">
           <h3>Dias em aberto:</h3>            
-          <p>Está com {"20"} dias</p>
+          <p>Está com {"01"} dias</p>
         </div>
         <div className="request-infos">
           <h3>Previsão:</h3>            

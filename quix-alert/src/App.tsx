@@ -34,6 +34,7 @@ function AuthenticatedApp() {
           <Route path="/help" element={<HelpScreen/>} />
           <Route path="/report" element={<ReportPage />}/>
           <Route path="/report/expandable/:reportId" element={<ReportExpandablePage />}/>
+          <Route path="/animal_registration" element={<AnimalRegistrationContainer />}/>
         </Routes>
       </div>
     </div>

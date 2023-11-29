@@ -68,7 +68,7 @@ function ApprovalAdoptionContainer(Props: ApprovalContainer) {
         </div>
         <div className="request-infos">
           <h3>Previsão:</h3>            
-          <p>Em {"05/09/2023"}</p>
+          <p>Em {"05/12/2023"}</p>
         </div>
       </div>
 

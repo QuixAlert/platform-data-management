@@ -72,11 +72,11 @@ function ApprovalReportContainer(Props: ApprovalContainer) {
         </div>
         <div className="request-infos">
           <h3>Dias em aberto:</h3>            
-          <p>Está com {"20"} dias</p>
+          <p>Está com {"01"} dias</p>
         </div>
         <div className="request-infos">
           <h3>Previsão:</h3>            
-          <p>Em {"05/09/2023"}</p>
+          <p>Em {"09/12/2023"}</p>
         </div>
       </div>
 

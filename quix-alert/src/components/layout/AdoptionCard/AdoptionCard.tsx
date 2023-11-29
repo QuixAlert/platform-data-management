@@ -58,7 +58,7 @@ function AdoptionCard(Props: AdoptionCard) {
           </div>
           <div className="card-adoption-info-line">
             <h3>Data da solicitação:</h3>            
-            <p>{ Props.solicitationDate || "20/12/2023"}</p>
+            <p>{ Props.solicitationDate || "29/11/2023"}</p>
           </div>
         </div>
         <div className="card-adoption-animal-info">
@@ -109,7 +109,7 @@ function AdoptionCard(Props: AdoptionCard) {
         <div className="card-status-info">
         <div className="card-info-line">
             <h2>Dias em aberto:</h2>
-            <p>Está com { Props.openDays || "20" } dias</p>
+            <p>Está com { Props.openDays || "01" } dias</p>
           </div>
           <div className="card-info-line">
             <h2>Status:</h2>
@@ -117,7 +117,7 @@ function AdoptionCard(Props: AdoptionCard) {
           </div>
           <div className="card-info-line">
             <h2>Conclusão Prevista:</h2>
-            <p>{ Props.expectedDate || "25/12/2023" }</p>
+            <p>{ Props.expectedDate || "05/12/2023" }</p>
           </div>
         </div>
         <div className="card-see-more">

@@ -48,7 +48,7 @@ function ReportInformationContainer(Props: ReportInformationContainer) {
         </div>
 
         <div className="report-adress">
-          <p><span>Endereço</span>{Props.incidentLocation}</p>
+          <p><span>Endereço:</span>{Props.incidentLocation}</p>
         </div>
       </div>
 

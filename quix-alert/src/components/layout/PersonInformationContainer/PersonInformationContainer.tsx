@@ -43,7 +43,7 @@ function PersonInformationContainer(Props: PersonalInformationContainer) {
           </div>
           <div className="request-hour">
             <img  className="request-icon" src={ clock } alt="" />
-            <p>{Props.requestedHour || "19h25"}</p>
+            <p>{Props.requestedHour || "09h25"}</p>
           </div>
         </div>
 

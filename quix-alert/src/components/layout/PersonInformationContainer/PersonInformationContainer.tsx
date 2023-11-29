@@ -4,19 +4,34 @@ import requester from "../../../assets/images/requester.jpeg";
 
 import calendar from "../../../assets/icons/calendar.svg" 
 import clock from "../../../assets/icons/clock.svg" 
- 
+
+import { getFirebaseAppUserById } from "../../../api/firebaseUsers";
+
+import { useQuery } from "react-query";
+
+import RequesterContainer from "../RequesterContainer/RequesterContainer";
+
+import {useAuth} from "../../../pages/LoginPage/AuthProvider";
+
 import "./styles.css";
 
-function PersonInformationContainer() {
+function PersonInformationContainer(Props: PersonalInformationContainer) {
+  const { getTokens } = useAuth();
+
   return(
     <div className="info person-information-container">
-      <div className="requester-container">
+      <RequesterContainer 
+        requesterName={Props.personResponsible}
+        requesterPicturePath=""
+        userId={Props.userId}
+      />
+      {/* <div className="requester-container">
         <img className="requester-photo" src={ requester } alt="requester-photo" />
         <div className="requester-role-and-name">
           <p className="requester-role">Solicitante:</p>
-          <p className="requester-name">Thiago Maia</p>
+          <p className="requester-name">{Props.personResponsible}</p>
         </div>
-      </div>
+      </div> */}
 
       <div className="request-header-info">
         <h1 className="request-type">Solicitação de Adoção</h1>
@@ -24,16 +39,16 @@ function PersonInformationContainer() {
           <p className="request-date-title">Data da Solicitação</p>
           <div className="request-date">
             <img className="request-icon" src={ calendar } alt="" />
-            <p>23/06/2023</p>
+            <p>{Props.solicitationDate || "05/12/2023"}</p>
           </div>
           <div className="request-hour">
             <img  className="request-icon" src={ clock } alt="" />
-            <p>19h25</p>
+            <p>{Props.requestedHour || "19h25"}</p>
           </div>
         </div>
 
         <div className="request-adress">
-          <p><span>Endereço</span> Rua José Viana de Sousa - 333</p>
+          <p><span>Endereço</span> {Props.addressResponsible} </p>
         </div>
       </div>
 
@@ -41,21 +56,21 @@ function PersonInformationContainer() {
         <div className="request-where-lives">
           <h3>Onde mora:</h3>
           <div className="request-input-box">
-            <p className="request-input">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
+            <p className="request-input">{Props.houseDescription}</p>
           </div>
         </div>
 
         <div className="request-other-animals">
           <h3>Possui outros animais?</h3>
           <div className="request-input-box">
-            <p className="request-input">Lorem Ipsum is simply esetting industry. Lorem Ipsum has been.</p>
+            <p className="request-input">{Props.otherAnimals || "Não possui"}</p>
           </div>
         </div>
 
         <div className="request-motivation"> 
           <h3>Motivação para adoção:</h3>
           <div className="request-input-box">
-            <p className="request-input">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. t of the printing and typesetting industry. Lorem Ipsum has been</p>
+            <p className="request-input">{Props.adoptionMotivation || "Gosto muito de animais, sou apaixonado por cuidar de pets!"}</p>
           </div>
 
         </div>
@@ -63,7 +78,7 @@ function PersonInformationContainer() {
           <div className="montlhy-income">
             <h3>Renda Mensal</h3>
             <div className="request-input-box">
-              <p>R$ 3.500,00</p>
+              <p>R$ {Props.monthlyIncome || "3500"}</p>
             </div>
           </div>
           <div className="personal-visit">
@@ -72,13 +87,13 @@ function PersonInformationContainer() {
               <div className="visit-date">
                 <div className="request-input-box">
                   <img className="request-icon" src={ calendar } alt="" />
-                  <p>22/07/2023</p>
+                  <p>{Props.visitDate || "22/07/2023"}</p>
                 </div>
               </div>
               <div className="visit-hour">
                 <div className="request-input-box">
                   <img className="request-icon" src={ clock } alt="" />
-                  <p>14h10</p>
+                  <p>{Props.visitHour || "14h10"}</p>
                 </div>
               </div>
             </div>

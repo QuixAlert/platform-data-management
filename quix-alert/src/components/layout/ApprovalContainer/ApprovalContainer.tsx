@@ -1,6 +1,6 @@
 import React from "react";
 
-import responsible from "../../../assets/images/responsible.jpeg";
+import responsible from "../../../assets/images/user.jpeg";
 import calendar from "../../../assets/icons/calendar.svg";
 import clock from "../../../assets/icons/clock.svg";
 import x from "../../../assets/icons/x.svg"
@@ -8,14 +8,14 @@ import v from "../../../assets/icons/v.svg"
 
 import "./styles.css";
 
-function ApprovalContainer() {
+function ApprovalContainer(Props: ApprovalContainer) {
   return(
     <div className="info approval-container">
       <div className="responsible-container">
-        <img className="responsible-photo" src={ responsible } alt="requester-photo" />
+        <img className="responsible-photo" src={ responsible } alt="responsible-photo" />
         <div className="responsible-role-and-name">
           <p className="responsible-role">Responsável:</p>
-          <p className="responsible-name">Samuel Honorato</p>
+          <p className="responsible-name">Phablo Gabriel</p>
         </div>
       </div>
 
@@ -24,11 +24,11 @@ function ApprovalContainer() {
           <p className="responsible-date-title">Data da Solicitação</p>
           <div className="responsible-date">
             <img className="responsible-icon" src={ calendar } alt="" />
-            <p>23/06/2023</p>
+            <p>{Props.solicitationDate || "23/06/2023"}</p>
           </div>
           <div className="responsible-hour">
             <img className="responsible-icon" src={ clock } alt="" />
-            <p>19h25</p>
+            <p>{Props.solicitationHour || "19h25"}</p>
           </div>
         </div>
       </div>
@@ -38,20 +38,16 @@ function ApprovalContainer() {
       </h2>
       <div className="request-infos-grid">
         <div className="request-infos">
-          <h3>Número de registro:</h3>
-          <p>343212-78</p>
-        </div>
-        <div className="request-infos">
           <h3>Status:</h3>            
           <p>Em Análise</p>
         </div>
         <div className="request-infos">
           <h3>Dias em aberto:</h3>            
-          <p>Está com 20 dias</p>
+          <p>Está com {"20"} dias</p>
         </div>
         <div className="request-infos">
           <h3>Previsão:</h3>            
-          <p>Em 05/09/2023</p>
+          <p>Em {"05/09/2023"}</p>
         </div>
       </div>
 

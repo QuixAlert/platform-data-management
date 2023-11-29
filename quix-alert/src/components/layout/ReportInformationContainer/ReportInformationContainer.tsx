@@ -4,36 +4,51 @@ import requester from "../../../assets/images/requester.jpeg";
 
 import calendar from "../../../assets/icons/calendar.svg" 
 import clock from "../../../assets/icons/clock.svg" 
- 
+
+import { useAuth } from "../../../pages/LoginPage/AuthProvider";
+import { useQuery } from "react-query";
+import { getFirebaseAppUserById } from "../../../api/firebaseUsers";
+
 import "./styles.css";
 
-function ReportInformationContainer() {
+function ReportInformationContainer(Props: ReportInformationContainer) {
+  const {getTokens} = useAuth();
+
+  const { data: userResponse, isLoading: isLoadingUser } = useQuery(
+    ["user", Props.userId],
+    () => getFirebaseAppUserById(getTokens(), Props.userId)
+  )
+
+  if (isLoadingUser) {
+    return <div>Carregando...</div>
+  }
+
   return(
     <div className="info person-information-container">
       <div className="requester-container">
-        <img className="requester-photo" src={ requester } alt="requester-photo" />
+        <img className="requester-photo" src={ userResponse.picturePath } alt="requester-photo" />
         <div className="requester-role-and-name">
           <p className="requester-role">Solicitante:</p>
-          <p className="requester-name">Thiago Maia</p>
+          <p className="requester-name">{userResponse.name}</p>
         </div>
       </div>
 
       <div className="report-header-info">
-        <h1 className="report-type">Lixo Descartado Incorretamente</h1>
+        <h1 className="report-type">{Props.title}</h1>
         <div className="report-date-container">
           <p className="report-date-title">Data da Solicitação</p>
           <div className="report-date">
             <img className="report-icon" src={ calendar } alt="" />
-            <p>23/06/2023</p>
+            <p>{Props.incidentData}</p>
           </div>
           <div className="report-hour">
             <img  className="report-icon" src={ clock } alt="" />
-            <p>19h25</p>
+            <p>{Props.incidentTime}</p>
           </div>
         </div>
 
         <div className="report-adress">
-          <p><span>Endereço</span> Rua José Viana de Sousa - 333</p>
+          <p><span>Endereço</span>{Props.incidentLocation}</p>
         </div>
       </div>
 
@@ -41,22 +56,21 @@ function ReportInformationContainer() {
         <div className="report-description">
           <h3>Descrição:</h3>
           <div className="report-input-box">
-            <p className="report-input">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui id eveniet voluptate perferendis in cumque accusamus exercitationem necessitatibus! Tempora consectetur optio, ex voluptatibus rerum beatae qui exercitationem reiciendis iure rem!</p>
+            <p className="report-input">{Props.description}</p>
           </div>
         </div>
 
         <div className="report-possible-solution">
           <h3>Possível Solução</h3>
           <div className="report-input-box">
-            <p className="report-input">Lorem Ipsum is simply esetting industry. Lorem Ipsum has been. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste animi, ad blanditiis voluptas commodi pariatur provident nihil minus expedita libero unde mollitia, nisi nesciunt totam molestias cumque delectus ipsam ea!
-            Voluptas vitae totam consequatur excepturi.</p>
+            <p className="report-input">{Props.possibleSolution}</p>
           </div>
         </div>
 
         <div className="report-extras-details"> 
           <h3>Detalhes Extras</h3>
           <div className="report-input-box">
-            <p className="report-input">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. t of the printing and typesetting industry. Lorem Ipsum has been</p>
+            <p className="report-input">{Props.extras || "Mais alguns detalhes extras do ocorrido"}</p>
           </div>
 
         </div>

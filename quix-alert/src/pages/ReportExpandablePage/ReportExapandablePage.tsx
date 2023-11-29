@@ -39,7 +39,9 @@ function ReportExpandablePage() {
             userId={reportResponse.userId}
             extras=""
           />
-          <ReportContainer />
+          <ReportContainer
+            reportPicturePath={reportResponse.picturePath}
+          />
           <ApprovalContainer
             solicitationDate={reportResponse.incidentData}
             solicitationHour={reportResponse.incidentTime}

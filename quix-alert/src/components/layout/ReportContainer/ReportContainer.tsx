@@ -4,12 +4,12 @@ import "./styles.css";
 
 import reportPhoto from "../../../assets/images/street.jpeg";
 
-function ReportContainer() {
+function ReportContainer(Props: ReportContainer) {
   return(
     <div className="info report-container">
       <p>Fotos Anexadas</p>
       <div className="report-information-container">
-        <img className="report-images" src={ reportPhoto } alt="report image"/>
+        <img className="report-images" src={ Props.reportPicturePath } alt="report image"/>
 
         <div className="report-map">
         </div>

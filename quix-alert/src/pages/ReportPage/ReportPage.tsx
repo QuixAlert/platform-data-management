@@ -63,6 +63,7 @@ function ReportPage() {
       <div className="report-page-cards-container">
         {
           allReportsResponse.map((report: ReportF) => (
+            Object.keys(report).length > 0 && (
               <ReportCard
                 key={report.id}
                 reportId={report.id}
@@ -81,6 +82,7 @@ function ReportPage() {
                 title={report.title}
               />
             ))
+          )
         }
       </div>
       <div className="report-page-plus-button-container">

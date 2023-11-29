@@ -76,27 +76,29 @@ function AdoptionPage() {
         <div className="adoption-page-cards-container">
           {
             allAdoptionsResponse.map((adoption: Adoption) => (
-              <AdoptionCard
-                key={adoption.id}
-                adoptionId={adoption.id}
-                animalId={adoption.animalId}
-                requesterId={adoption.userId}
-                requesterName={adoption.personResponsible}
-                requesterPicturePath=""
-                responsibleName=""
-                responsiblePicturePath=""
-                solicitationType=""
-                registerNumber=""
-                solicitationDate=""
-                animalPicturePath=""
-                animalName=""
-                animalType={adoption.animalType}
-                animalGender=""
-                openDays=""
-                status=""
-                expectedDate=""
-              />
+              Object.keys(adoption).length > 0 && (
+                <AdoptionCard
+                  key={adoption.id}
+                  adoptionId={adoption.id}
+                  animalId={adoption.animalId}
+                  requesterId={adoption.userId}
+                  requesterName={adoption.personResponsible}
+                  requesterPicturePath=""
+                  responsibleName=""
+                  responsiblePicturePath=""
+                  solicitationType=""
+                  registerNumber=""
+                  solicitationDate=""
+                  animalPicturePath=""
+                  animalName=""
+                  animalType={adoption.animalType}
+                  animalGender=""
+                  openDays=""
+                  status=""
+                  expectedDate=""
+                />
             ))
+            )
           }
         </div>
         <div className="adoption-page-plus-button-container">

@@ -40,6 +40,7 @@ function AdoptionPage() {
   }
 
   return(
+
       <div className="adoption-page-container">
         <div className="adoption-page-header">
           <h1>Adoções</h1>

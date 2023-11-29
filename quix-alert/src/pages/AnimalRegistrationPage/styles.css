@@ -1,0 +1,168 @@
+/* Estilos Gerais */
+.animal-registration-content-left-bottom-input,
+.input-curto,
+.select {
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #D9D9D9;
+  margin-bottom: 15px; /* Adicione um espaçamento entre os elementos */
+}
+
+/* Estilos do Input Curto */
+.input-curto {
+  width: 335px;
+  height: 43px;
+  flex: 1;
+}
+
+/* Estilos do Select */
+.select {
+  width: 128px;
+  height: 43px;
+  margin-left: 15px; /* Adicione um espaçamento entre os elementos */
+}
+
+/* Estilos do Textarea */
+.animal-registration-content-left-bottom-input {
+  width: 594px;
+  height: 151px;
+}
+
+
+/* Estilos do Botão */
+.animal-registration-button {
+  width: 303px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  background: linear-gradient(0deg, #0B5DA2 0%, #0B5DA2 100%);
+  color: #FFF;
+  font-weight: bold;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.animal-registration-content-left-bottom-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.animal-registration-content-left-bottom-inputs-top,
+.animal-registration-content-left-bottom-inputs-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px; /* Adicione um espaçamento entre os grupos de inputs */
+}
+
+.dados-animal {
+  display: flex;
+  flex-wrap: wrap;
+  /* O flex-wrap: wrap permite que os elementos se movam para a linha seguinte se não houver espaço suficiente. */
+}
+
+.input-curto,
+.select {
+  flex: 1;
+  margin-right: 15px; /* Adicione um espaçamento entre os campos */
+  margin-bottom: 15px; /* Adicione um espaçamento abaixo dos campos */
+}
+
+.input-curto:last-child,
+.select:last-child {
+  margin-right: 0; /* Remova a margem à direita do último elemento para evitar espaço extra */
+}
+
+.input-curto label,
+.select label {
+  display: block;
+  margin-bottom: 5px; /* Adicione um espaçamento entre o label e o input/select */
+}
+
+div.div-padding {
+  height: 100%;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+div.flex-left {
+  width: 60%;
+}
+
+div.flex-right {
+  width: 40%;
+  text-align: center;
+}
+
+label.label-info {
+  display: flex;
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: Poppins;
+}
+
+textarea.animal-registration-content-left-bottom-input {
+  display: flex;
+  padding: 20px;
+}
+
+div.dados-gerais-animal {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+div.dados-animal {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+label.select-info {
+  display: flex;
+  font-size: 14px;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+input.input-curto, select.select {
+  border: none;
+  padding: 5px;
+}
+
+div.nome-animal {
+  width: 60%;
+}
+
+div.tipo-animal {
+  width: 40%;
+}
+
+div.component-dados-animal {
+  width: 30%;
+}
+
+div.component-dados-animal input {
+  width: 100%;
+  background-color: #D9D9D9;
+  /* padding: 5px; */
+}
+
+
+/* elementos do flex-right */
+
+div.caixa-add-foto {
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  background-color: #D9D9D9;
+  border: 1px solid #F5F5F5;
+  border-radius: 12px;
+  text-align: center;
+}
+
+button.vector-plus {
+  margin: 20px 0;
+}

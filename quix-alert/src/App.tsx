@@ -6,6 +6,12 @@ import Sidebar from './components/layout/Sidebar/Sidebar';
 import AdoptionPage from './pages/AdoptionPage/AdoptionPage'
 import AdoptionExpandablePage from "./pages/AdoptionExpandablePage/AdoptionExpandablePage";
 
+
+import NavBar from "./components/layout/NavBar/NavBar";
+import Sidebar from "./components/layout/Sidebar/Sidebar";
+import AdoptionPage from "./pages/AdoptionPage/AdoptionPage";
+import AnimalRegistrationContainer from "./pages/AnimalRegistrationPage/AnimalRegistrationPage";
+
 import HomePage from './pages/HomePage/HomePage';
 import ConfigScreen from './components/screens/ConfingScreen/configScreen';
 import HelpScreen from './components/screens/HelpScreen/helpScreen';
@@ -37,7 +43,6 @@ function AuthenticatedApp() {
     </div>
   );
 }
-
 function App() {
   const { userLogged } = useAuth();
 

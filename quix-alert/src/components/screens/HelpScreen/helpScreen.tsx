@@ -1,6 +1,12 @@
 import React from "react";
 import YouTube from "react-youtube";
 import "./helpScreen.css";
+import imagem_video_cadastro from "../../../assets/images/imagem_video_cadastro.png";
+import imagem_video_denuncia from "../../../assets/images/imagem_video_denuncia.png";
+import imagem_video_documento from "../../../assets/images/imagem_video_documento.png";
+import imagem_video_adocao from "../../../assets/images/imagem_video_adocao.png";
+import imagem_video_sair from "../../../assets/images/imagem_video_sair.png";
+import imagem_video_feedback from "../../../assets/images/imagem_video_feedback.png";
 
 function HelpScreen() {
   const opts = {
@@ -32,17 +38,12 @@ function HelpScreen() {
             <span>Para cadastrar um animal você precisará acessar a página de animais e clicar no botão "Cadastrar Animal", após isso basta preencher as informações do animal e ele aparecerá para todos como um animal disponível para adoção </span>
             <div className="section-bottom">
               <div className="photo-video">
-                {/* <img src="../../../assets/images/video.jpg" alt="video" /> */}
-                <div className="icon-video">
-
-                  <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                    <path d="M27 0C21.6599 0 16.4397 1.58352 11.9996 4.55032C7.55949 7.51712 4.09883 11.7339 2.05526 16.6675C0.0116987 21.6011 -0.522991 27.0299 0.51881 32.2674C1.56061 37.5049 4.13211 42.3159 7.90813 46.0919C11.6841 49.8679 16.4951 52.4394 21.7326 53.4812C26.9701 54.523 32.3989 53.9883 37.3325 51.9447C42.2661 49.9012 46.4829 46.4405 49.4497 42.0004C52.4165 37.5603 54 32.3401 54 27C54 23.4543 53.3016 19.9433 51.9448 16.6675C50.5879 13.3918 48.5991 10.4153 46.0919 7.90811C43.5847 5.40093 40.6082 3.41213 37.3325 2.05525C34.0567 0.698376 30.5457 0 27 0ZM21.6 39.15V14.85L37.8 27L21.6 39.15Z" fill="white"/>
-                  </svg>
-
-                </div>
+                <img src={imagem_video_cadastro} alt="video" /> 
               </div>
               <div className="see-more">
-                <button>Ver mais</button>
+                <button onClick={() => window.open('https://www.youtube.com/watch?v=ab6eDdwS3rA&t=13s', '_blank')}>
+                  Ver mais
+                </button>
               </div>
             </div>
           </div>
@@ -58,14 +59,12 @@ function HelpScreen() {
             <span>Para iniciar o antendimento de uma denúncia, basta ir até a opção de denúncias e clicar no card que respresenta a denúncia que terá o atendimento iniciado. Após clicar no card, haverá uma expansão do card para que seja realizado as ações necessárias. </span>
             <div className="section-bottom">
               <div className="photo-video">
-                <div className="icon-video">
-                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                    <path d="M27 0C21.6599 0 16.4397 1.58352 11.9996 4.55032C7.55949 7.51712 4.09883 11.7339 2.05526 16.6675C0.0116987 21.6011 -0.522991 27.0299 0.51881 32.2674C1.56061 37.5049 4.13211 42.3159 7.90813 46.0919C11.6841 49.8679 16.4951 52.4394 21.7326 53.4812C26.9701 54.523 32.3989 53.9883 37.3325 51.9447C42.2661 49.9012 46.4829 46.4405 49.4497 42.0004C52.4165 37.5603 54 32.3401 54 27C54 23.4543 53.3016 19.9433 51.9448 16.6675C50.5879 13.3918 48.5991 10.4153 46.0919 7.90811C43.5847 5.40093 40.6082 3.41213 37.3325 2.05525C34.0567 0.698376 30.5457 0 27 0ZM21.6 39.15V14.85L37.8 27L21.6 39.15Z" fill="white"/>
-                  </svg>
-                </div>
+              <img src={imagem_video_denuncia} alt="video" />
               </div>
               <div className="see-more">
-                <button>Ver mais</button>
+                <button onClick={() => window.open('https://www.youtube.com/watch?v=ab6eDdwS3rA&t=13s', '_blank')}>
+                  Ver mais
+                </button>
               </div>
             </div>
           </div>
@@ -85,14 +84,12 @@ function HelpScreen() {
             <span>Para iniciar a análise de documentos, será necessário ir até a opções de Documentos e clicar no card que representa o documento desejado. Ao clicar no card, irá aparecer uma nova tela com todas as informações do documento e do solicitante, lá terá as opções de negar ou aceitar. </span>
             <div className="section-bottom">
               <div className="photo-video">
-                <div className="icon-video">
-                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                    <path d="M27 0C21.6599 0 16.4397 1.58352 11.9996 4.55032C7.55949 7.51712 4.09883 11.7339 2.05526 16.6675C0.0116987 21.6011 -0.522991 27.0299 0.51881 32.2674C1.56061 37.5049 4.13211 42.3159 7.90813 46.0919C11.6841 49.8679 16.4951 52.4394 21.7326 53.4812C26.9701 54.523 32.3989 53.9883 37.3325 51.9447C42.2661 49.9012 46.4829 46.4405 49.4497 42.0004C52.4165 37.5603 54 32.3401 54 27C54 23.4543 53.3016 19.9433 51.9448 16.6675C50.5879 13.3918 48.5991 10.4153 46.0919 7.90811C43.5847 5.40093 40.6082 3.41213 37.3325 2.05525C34.0567 0.698376 30.5457 0 27 0ZM21.6 39.15V14.85L37.8 27L21.6 39.15Z" fill="white"/>
-                  </svg>
-                </div>
+                <img src={imagem_video_documento} alt="video" />
               </div>
               <div className="see-more">
-                <button>Ver mais</button>
+                <button onClick={() => window.open('https://www.youtube.com/watch?v=ab6eDdwS3rA&t=13s', '_blank')}>
+                  Ver mais
+                </button>
               </div>
             </div>
           </div>
@@ -113,14 +110,12 @@ function HelpScreen() {
             <span>Para iniciar a análise de documentos para adoção, é necessário ir até a tela de solicitações de adoção e clicar no card que representa a adoção desejada para o atendimento. Após clicar a irá aparecer uma tela com as informações da solicitação e com as opções de aceitar ou negar e dar feedback.</span>
             <div className="section-bottom">
               <div className="photo-video">
-                <div className="icon-video">
-                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                    <path d="M27 0C21.6599 0 16.4397 1.58352 11.9996 4.55032C7.55949 7.51712 4.09883 11.7339 2.05526 16.6675C0.0116987 21.6011 -0.522991 27.0299 0.51881 32.2674C1.56061 37.5049 4.13211 42.3159 7.90813 46.0919C11.6841 49.8679 16.4951 52.4394 21.7326 53.4812C26.9701 54.523 32.3989 53.9883 37.3325 51.9447C42.2661 49.9012 46.4829 46.4405 49.4497 42.0004C52.4165 37.5603 54 32.3401 54 27C54 23.4543 53.3016 19.9433 51.9448 16.6675C50.5879 13.3918 48.5991 10.4153 46.0919 7.90811C43.5847 5.40093 40.6082 3.41213 37.3325 2.05525C34.0567 0.698376 30.5457 0 27 0ZM21.6 39.15V14.85L37.8 27L21.6 39.15Z" fill="white"/>
-                  </svg>
-                </div>
+                <img src={imagem_video_adocao} alt="video" />
               </div>
               <div className="see-more">
-                <button>Ver mais</button>
+                <button onClick={() => window.open('https://www.youtube.com/watch?v=ab6eDdwS3rA&t=13s', '_blank')}>
+                  Ver mais
+                </button>
               </div>
             </div>
           </div>
@@ -136,14 +131,12 @@ function HelpScreen() {
             <span>No menu superior, aparecerá sua foto. Basta clicar nela que aparecerá a opção de sair do programa. Ao clicar nestá opção, o usuário será imediatamente desconectado do sistema</span>
             <div className="section-bottom">
               <div className="photo-video">
-                <div className="icon-video">
-                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                    <path d="M27 0C21.6599 0 16.4397 1.58352 11.9996 4.55032C7.55949 7.51712 4.09883 11.7339 2.05526 16.6675C0.0116987 21.6011 -0.522991 27.0299 0.51881 32.2674C1.56061 37.5049 4.13211 42.3159 7.90813 46.0919C11.6841 49.8679 16.4951 52.4394 21.7326 53.4812C26.9701 54.523 32.3989 53.9883 37.3325 51.9447C42.2661 49.9012 46.4829 46.4405 49.4497 42.0004C52.4165 37.5603 54 32.3401 54 27C54 23.4543 53.3016 19.9433 51.9448 16.6675C50.5879 13.3918 48.5991 10.4153 46.0919 7.90811C43.5847 5.40093 40.6082 3.41213 37.3325 2.05525C34.0567 0.698376 30.5457 0 27 0ZM21.6 39.15V14.85L37.8 27L21.6 39.15Z" fill="white"/>
-                  </svg>
-                </div>
+                <img src={imagem_video_sair} alt="video" />
               </div>
               <div className="see-more">
-                <button>Ver mais</button>
+                <button onClick={() => window.open('https://www.youtube.com/watch?v=ab6eDdwS3rA&t=13s', '_blank')}>
+                  Ver mais
+                </button>
               </div>
             </div>
           </div>
@@ -159,18 +152,16 @@ function HelpScreen() {
         {/* Card 3 - 2 fila */}
         <div className="card">
           <div className="card-single">
-            <p className="card-title">Como cadastrar um animal</p>
-            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has </span>
+            <p className="card-title">Como dar feedback em uma solicitação</p>
+            <span>Para dar feedback em uma solicitação basta clicar na caixa de texto dentro da solicitação na área do atendente</span>
             <div className="section-bottom">
               <div className="photo-video">
-                <div className="icon-video">
-                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54" fill="none">
-                    <path d="M27 0C21.6599 0 16.4397 1.58352 11.9996 4.55032C7.55949 7.51712 4.09883 11.7339 2.05526 16.6675C0.0116987 21.6011 -0.522991 27.0299 0.51881 32.2674C1.56061 37.5049 4.13211 42.3159 7.90813 46.0919C11.6841 49.8679 16.4951 52.4394 21.7326 53.4812C26.9701 54.523 32.3989 53.9883 37.3325 51.9447C42.2661 49.9012 46.4829 46.4405 49.4497 42.0004C52.4165 37.5603 54 32.3401 54 27C54 23.4543 53.3016 19.9433 51.9448 16.6675C50.5879 13.3918 48.5991 10.4153 46.0919 7.90811C43.5847 5.40093 40.6082 3.41213 37.3325 2.05525C34.0567 0.698376 30.5457 0 27 0ZM21.6 39.15V14.85L37.8 27L21.6 39.15Z" fill="white"/>
-                  </svg>
-                </div>
+                <img src={imagem_video_feedback} alt="video" />
               </div>
               <div className="see-more">
-                <button>Ver mais</button>
+                <button onClick={() => window.open('https://www.youtube.com/watch?v=ab6eDdwS3rA&t=13s', '_blank')}>
+                  Ver mais
+                </button>
               </div>
             </div>
           </div>

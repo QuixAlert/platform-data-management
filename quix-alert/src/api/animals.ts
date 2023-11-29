@@ -17,13 +17,13 @@ export async function getAllAnimals(token: AuthTokens): Promise<Animal[]>{
     }
 }
 
-export async function getAnimalsById(token: AuthTokens, animalId: string): Promise<Animal[]>{
+export async function getAnimalById(token: AuthTokens, animalId: string): Promise<Animal>{
     try {
         const { data, status } = await api.get(`${ANIMALS_PATH}/${animalId}`, {
             headers: { Authorization: `Bearer ${token.token}` }
         })
-        if(status == 201){
-            return data as Animal[]
+        if(status == 200){
+            return data as Animal
         }
     } catch (error){
         throw new Error("Login error!")

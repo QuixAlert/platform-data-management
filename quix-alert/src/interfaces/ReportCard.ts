@@ -1,4 +1,6 @@
 interface ReportCard {
+  userId: string,
+  reportId: string
   requesterName: string,
   requesterPicturePath: string,
   responsibleName: string,
@@ -10,6 +12,7 @@ interface ReportCard {
   openDays: string,
   status: string,
   expectedDate: string,
+  title: string,
 }
 
 export default ReportCard;

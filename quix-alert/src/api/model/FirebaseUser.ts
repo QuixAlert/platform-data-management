@@ -4,3 +4,5 @@ interface FirebaseUser {
     email: string,
     picturePath: string
 }
+
+export default FirebaseUser

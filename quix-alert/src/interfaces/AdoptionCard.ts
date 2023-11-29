@@ -1,4 +1,6 @@
 interface AdoptionCard {
+  adoptionId: string,
+  requesterId: string,
   requesterName: string,
   requesterPicturePath: string,
   responsibleName: string,
@@ -6,6 +8,7 @@ interface AdoptionCard {
   solicitationType: string,
   registerNumber: string,
   solicitationDate: string,
+  animalId: string,
   animalPicturePath: string,
   animalName: string,
   animalGender: string,

@@ -27,11 +27,11 @@ function AuthenticatedApp() {
           <Route path="/main_window" element={<HomePage/>} />
           <Route path="/home" element={<HomePage/>} />
           <Route path="/adoption" element={<AdoptionPage/>} />
-          <Route path="/adoption/expandable" element={<AdoptionExpandablePage/>} />
+          <Route path="/adoption/expandable/:adoptionId" element={<AdoptionExpandablePage/>} />
           <Route path="/config" element={<ConfigScreen/>} />
           <Route path="/help" element={<HelpScreen/>} />
           <Route path="/report" element={<ReportPage />}/>
-          <Route path="/report/expandable" element={<ReportExpandablePage />}/>
+          <Route path="/report/expandable/:reportId" element={<ReportExpandablePage />}/>
         </Routes>
       </div>
     </div>

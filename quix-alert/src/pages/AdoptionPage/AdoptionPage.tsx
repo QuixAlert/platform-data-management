@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import AdoptionCard from "../../components/layout/AdoptionCard/AdoptionCard";
 
@@ -7,6 +7,7 @@ import {useMutation, useQuery} from "react-query";
 import {getTokens, signIn} from "../../api/user";
 import {useAuth} from "../LoginPage/AuthProvider";
 import {getAllAnimals} from "../../api/animals";
+import { getAllAdoption } from "../../api/adoption";
 
 const cardTest  = {
   requesterName: "Thiago Maia",
@@ -26,29 +27,16 @@ const cardTest  = {
 }
 
 function AdoptionPage() {
+  const { getTokens } = useAuth();
   const [activateButton, setActivateButton] = useState('todos');
-
-  // ---------------- EXAMPLE START ----------------
-  // Getting tokens from login to use on the other requests
-  const { getTokens } = useAuth()
-
-  // Using the react-query to control the state of the request result
-  const { data: allAnimals, isLoading: isLoadingAllAnimals } = useQuery(
-    "animals",
-    () => getAllAnimals(getTokens()),
+  
+  const { data: allAdoptionsResponse, isLoading: isLoadingAllAdoptions } = useQuery(
+    "adoptions",
+    () => getAllAdoption(getTokens()),
   );
 
-  // Controlling the response
-  if(!isLoadingAllAnimals){
-    console.log(allAnimals)
-  }
-  // ---------------- EXAMPLE END ----------------
-
-  const htmlCards = [];
-  const adoptionCardsArray = [cardTest, cardTest, cardTest, cardTest, cardTest];
-  
-  for (let index = 0; index < adoptionCardsArray.length; index++) {
-    htmlCards.push(<AdoptionCard key={index} { ...adoptionCardsArray[index] } />)
+  if (isLoadingAllAdoptions) {
+    return <div>Carregando...</div>
   }
 
   return(
@@ -86,7 +74,32 @@ function AdoptionPage() {
           </div>
         </div>
         <div className="adoption-page-cards-container">
-          { htmlCards }
+          {
+            allAdoptionsResponse.map((adoption: Adoption) => (
+              Object.keys(adoption).length > 0 && (
+                <AdoptionCard
+                  key={adoption.id}
+                  adoptionId={adoption.id}
+                  animalId={adoption.animalId}
+                  requesterId={adoption.userId}
+                  requesterName={adoption.personResponsible}
+                  requesterPicturePath=""
+                  responsibleName=""
+                  responsiblePicturePath=""
+                  solicitationType=""
+                  registerNumber=""
+                  solicitationDate=""
+                  animalPicturePath=""
+                  animalName=""
+                  animalType={adoption.animalType}
+                  animalGender=""
+                  openDays=""
+                  status=""
+                  expectedDate=""
+                />
+            ))
+            )
+          }
         </div>
         <div className="adoption-page-plus-button-container">
           <button className="adoption-page-plus-button">

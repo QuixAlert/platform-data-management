@@ -5,6 +5,7 @@ import './style.css';
 import { useMutation } from 'react-query';
 import { signIn } from '../../api/user';
 import {useAuth} from "./AuthProvider";
+import  QuixAlertLogo from '../../assets/images/QuixAlertLogo.png';
 
 function LoginPage() {
     const { login, setTokens } = useAuth();
@@ -34,6 +35,8 @@ function LoginPage() {
 
     return (
         <Card className="card-login">
+
+                
             <h1 className="title"> QuixAlert login!</h1>
 
             <Form className="login-form">

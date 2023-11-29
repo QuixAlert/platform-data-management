@@ -1,28 +1,77 @@
+body {
+    background-color: #f0f0f0; /* Cor de fundo da tela de login */
+}
+
 .card-login {
     width: 500px;
     height: 250px;
     position: absolute;
-    top: 40%;
-    left: 35%;
-    margin: -25px 0 0 -25px
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* Cor de fundo do cartão */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra do cartão */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.login-btn {
+
+.login-form-button {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Centraliza horizontalmente */
+    justify-self: center;
+    padding-bottom: 10px;
+    border-radius: 12px;
+    background: #269996; /* Cor do botão */
 }
 
 .title {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    color: #333; /* Cor do título */
 }
 
-/*#components-form-demo-normal-login .login-form {*/
-/*    max-width: 300px;*/
-/*}*/
-/*#components-form-demo-normal-login .login-form-forgot {*/
-/*    float: right;*/
-/*}*/
-/*#components-form-demo-normal-login .login-form-button {*/
-/*    width: 100%;*/
-/*}*/
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #F4F4F111;
+}
+
+.wrap-login {
+    width: 390px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 77px 55px 33px 55px;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+    width: 100%;
+}
+
+.login-form-title {
+    font-family: Nunito, sans-serif;
+    display: block;
+    font-size: 30px;
+    justify-content: center; /* Centraliza horizontalmente */
+    color: azure;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.login-form-title img {
+    width: 90px;
+}
+
+/* ... (restante do CSS) */

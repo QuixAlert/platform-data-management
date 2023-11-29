@@ -51,7 +51,7 @@
 .adoption-page-plus-button-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .adoption-page-plus-button {
   margin: 1rem auto;

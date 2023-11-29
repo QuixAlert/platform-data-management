@@ -17,14 +17,13 @@ import { Button, message as antdMessage, Space } from 'antd';
 function ApprovalReportContainer(Props: ApprovalContainer) {
   const { getTokens } = useAuth();
   const [feedBack, setFeedBack] = useState("");
-  const [reportStatus, setReportStatus] = useState(false)
-
+  
   const handleChange = (event) => {
     setFeedBack(event.target.value);
   };
 
   const changeStatusMutation = useMutation({
-    mutationFn: changeStatusReport
+    mutationFn: changeStatusReport,
   })
 
   const feedBackMutation = useMutation({
@@ -33,14 +32,10 @@ function ApprovalReportContainer(Props: ApprovalContainer) {
       console.log(data)
       if (data === true) {
         antdMessage.success('Operação bem-sucedida!');
-        setReportStatus(true)
+        changeStatusMutation.mutate({token: getTokens(), reportId: Props.id})
       }
-    }
+    },
   });
-
-  if(reportStatus){
-    changeStatusMutation.mutate({token: getTokens(), reportId: Props.id})
-  }
 
 
   return(

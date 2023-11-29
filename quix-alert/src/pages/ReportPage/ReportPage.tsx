@@ -82,11 +82,6 @@ function ReportPage() {
           )
         }
       </div>
-      <div className="report-page-plus-button-container">
-        <button className="report-page-plus-button">
-          +
-        </button>
-      </div>
     </div>
   );
 }

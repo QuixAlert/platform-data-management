@@ -10,9 +10,13 @@ export async function changeStatusReport(token: AuthTokens, reportId: string): P
         const reportIdT = token['reportId']
         console.log(tokenT);
         console.log(tokenT.token);
-        const { data, status } = await api.put(`${REPORT_PATH}/change-status/${reportIdT}`, {
-            headers: { Authorization: `Bearer ${tokenT.token}` }
-        })
+        const { data, status } = await api.put(
+          `${REPORT_PATH}/change-status/${reportIdT}`,
+          {},
+          {
+              headers: { Authorization: `Bearer ${tokenT.token}` }
+          }
+        );
 
         if(status == 200){
             return true

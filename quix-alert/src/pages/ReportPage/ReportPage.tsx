@@ -23,6 +23,9 @@ function ReportPage() {
     return <div>Carregando...</div>
   }
 
+  console.log(getTokens().token);
+  
+
   return(
     <div className="report-page-container">
       <div className="report-page-header">
@@ -60,7 +63,6 @@ function ReportPage() {
       <div className="report-page-cards-container">
         {
           allReportsResponse.map((report: ReportF) => (
-            Object.keys(report).length > 0 && (
               <ReportCard
                 key={report.id}
                 reportId={report.id}
@@ -76,9 +78,9 @@ function ReportPage() {
                 responsiblePicturePath=""
                 solicitationDate={report.incidentData}
                 status=""
+                title={report.title}
               />
             ))
-          )
         }
       </div>
       <div className="report-page-plus-button-container">

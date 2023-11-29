@@ -12,6 +12,7 @@ interface ReportCard {
   openDays: string,
   status: string,
   expectedDate: string,
+  title: string,
 }
 
 export default ReportCard;

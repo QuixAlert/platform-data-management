@@ -18,13 +18,13 @@ export async function getAllReport(token: AuthTokens): Promise<ReportF[]>{
     }
 }
 
-export async function getReportById(token: AuthTokens, reportId: string): Promise<ReportF[]>{
+export async function getReportById(token: AuthTokens, reportId: string): Promise<ReportF>{
     try {
         const { data, status } = await api.get(`${REPORT_PATH}/${reportId}`, {
             headers: { Authorization: `Bearer ${token.token}` }
         })
-        if(status == 201){
-            return data as ReportF[]
+        if(status == 200){
+            return data as ReportF
         }
     } catch (error){
         throw new Error("Login error!")

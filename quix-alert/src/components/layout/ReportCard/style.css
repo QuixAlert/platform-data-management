@@ -79,6 +79,8 @@
   flex-direction: column;
   justify-content: space-between;
   height: 140px;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 .card-report-content {
   font-size: 15px;

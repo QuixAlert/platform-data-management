@@ -41,6 +41,10 @@ function ReportCard(Props: ReportCard) {
         />
 
         <div className="card-report-container">
+          <div className="card-report-content">
+            <h3>Título</h3>
+            <p>{Props.title}</p>
+          </div>
 
           <div className="card-report-content">
             <h3>Data da Solicitação:</h3>

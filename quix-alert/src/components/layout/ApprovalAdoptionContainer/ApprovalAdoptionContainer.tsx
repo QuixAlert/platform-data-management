@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import responsible from "../../../assets/images/user.jpeg";
 import calendar from "../../../assets/icons/calendar.svg";
@@ -7,8 +7,29 @@ import x from "../../../assets/icons/x.svg"
 import v from "../../../assets/icons/v.svg"
 
 import "./styles.css";
+import { useAuth } from "../../../pages/LoginPage/AuthProvider";
+import { useMutation } from "react-query";
+import { registerAdoptionFeedback } from "../../../api/adoptionFeedback";
+import { Button, message as antdMessage, Space } from 'antd';
 
 function ApprovalAdoptionContainer(Props: ApprovalContainer) {
+  const { getTokens } = useAuth();
+  const [feedBack, setFeedBack] = useState("");
+
+  const handleChange = (event) => {
+    setFeedBack(event.target.value);
+  };
+
+  const feedBackMutation = useMutation({
+    mutationFn: registerAdoptionFeedback,
+    onSuccess: (data) => {
+      console.log(data)
+      if (data === true) {
+        antdMessage.success('Operação bem-sucedida!');
+      }
+    }
+  });
+  
   return(
     <div className="info approval-container">
       <div className="responsible-container">
@@ -62,12 +83,45 @@ function ApprovalAdoptionContainer(Props: ApprovalContainer) {
           id="request-return"
           cols={10}
           rows={10}
+          value={feedBack}
+          onChange={handleChange}
         >
         </textarea>
-        <button className="request-return-button refuse-btn">
+        <button 
+          className="request-return-button refuse-btn"
+          onClick={() =>
+            feedBackMutation.mutate(
+              {
+                token: getTokens(),
+                feedback: {
+                  referenceId: Props.id,
+                  description: feedBack,
+                  launchDate: Date.now(),
+                  accepted: false,
+                }
+            }
+            )
+          }
+        >
           <img src={ x } alt="refuse button icon" />
         </button>
-        <button className="request-return-button accept-btn">
+        
+        <button
+          className="request-return-button accept-btn"
+          onClick={() =>
+            feedBackMutation.mutate(
+              {
+                token: getTokens(),
+                feedback: {
+                  referenceId: Props.id,
+                  description: feedBack,
+                  launchDate: Date.now(),
+                  accepted: true,
+                }
+            }
+            )
+          }
+        >
         <img src={ v } alt="accept button icon" />
         </button>
       </form>
